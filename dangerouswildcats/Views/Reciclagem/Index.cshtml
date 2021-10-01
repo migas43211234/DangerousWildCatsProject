@@ -1,0 +1,209 @@
+﻿@{
+    Layout = "MyLayout";
+    ViewData["Title"] = "Reciclagem";
+}
+
+@using Microsoft.AspNetCore.Identity
+@using dangerouswildcats.Areas.Identity.Data
+@inject SignInManager<dangerouswildcatsUser> SignInManager
+@inject UserManager<dangerouswildcatsUser> UserManager
+
+@model List<JogoReciclagem>
+
+<div class="margem4"></div>
+
+<div class="jumbotron">
+    <img src="/recursos/Reciclagem/MicrosoftTeams-image.png" class="img-fluid" id="imgReciclagem" />
+</div>
+
+<div class="container">
+    <div class="row">
+        <h1>Reciclagem</h1>
+        <p>
+            <!--Texto/Introdução ao tema-->
+            Reciclagem é o processo de recolher e processar resíduos que, de outra forma, seriam abandonados e convertê-los em novos materiais ou produtos de grande utilidade.
+            Entre os materiais recicláveis estão diversos tipos de vidro, papel, metal, plástico, tecido e componentes eletrónicos.
+            A reciclagem permite reduzir o consumo de matérias-primas, de utilização de energia e a poluição do ar e da água, ao reduzir também a necessidade de tratamento convencional de lixo e a emissão de gases de efeito de estufa.
+            A reciclagem pode beneficiar a sua comunidade e o meio ambiente!
+        </p>
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+<!--ARTIGOS----------------------------------------------------------------------->
+<div class="container-fluid article-background">
+    <div class="row">
+        <h1>Artigos</h1>
+        <div class="col-lg-3">
+            <a href="http://www.abepro.org.br/biblioteca/tn_sto_234_366_30516.pdf">
+                <div class="card">
+                    <img class="article-image" src="/recursos/Reciclagem/bundle-1853667_1920.jpg" alt="Artigo 1" style="width:100%">
+                    <h5>Reciclagem do Papel</h5>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-3">
+            <a href="https://www.nationalgeographic.com/science/article/plastic-produced-recycling-waste-ocean-trash-debris-environment">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Reciclagem/beach-4894542_1920.jpg" alt="Artigo 2" style="width:100%">
+                    <h5>91% do plástico não é reciclado</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://wwf.panda.org/discover/knowledge_hub/teacher_resources/project_ideas/recycling_glass/?">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Reciclagem/bottles-3302316_1920.jpg" alt="Artigo 3" style="width:100%">
+                    <h5>Reciclagem do Vidro - Como ajuda o meio ambiente?</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://www.britannica.com/explore/savingearth/recycling">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Reciclagem/nature-3289812_1920.jpg" alt="Artigo 4" style="width:100%">
+                    <h5>Importância da Reciclagem</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!--FIM -- ARTIGOS----------------------------------------------------------------------->
+<!--Quotes----------------------------------------------------------------------->
+<div class="container">
+    <div class="row">
+        <blockquote class="quote-card">
+            <p>
+                Recycling is more than just a response to the environmental crisis and has assumed a symbolic role in beginning to change the nature of western societies and the culture of consumerism.
+                Indeed many environmentalists assume that there will be an inevitable shift from our "throwaway" society to a post-industrial "recycling" society of the future.
+            </p>
+            <cite>
+                Matthew Gandy
+            </cite>
+        </blockquote>
+    </div>
+</div>
+
+<!--Benefícios da Reciclagem------------------------------------------------>
+<div class="container">
+    <div class="margem3">
+        <h1>Benefícios da Reciclagem</h1>
+    </div>
+    <div class="row how-to">
+        <div class="col-lg-8">
+            <div class="margem4">
+                <h4>
+                    EVITA QUE UMA ÁRVORE SEJA CORTADA
+                </h4>
+                <p>
+                    Cada cinquenta quilos de papel usado, transformado em papel novo, evita que uma árvore seja cortada.
+                    Pense na quantidade de papel que deitou fora até hoje e imagine quantas árvores poderia ter ajudado a preservar.
+                </p>
+
+                <h4>
+                    GERA EMPREGOS
+                </h4>
+
+                <p>
+                    Outro benefício da reciclagem é a quantidade de empregos que ela gera.
+                    Muitos desempregados estão a buscar trabalho neste sector e conseguindo ganhar salário para manterem suas familias com condição financeira estável.
+                </p>
+
+                <h4>
+                    DIMINUIÇÃO DO CONSUMO DE RECURSOS NO PROCESSO DE PRODUÇÃO
+                </h4>
+                <p>
+                    Redução do consumo de energia, água e recursos naturais (matérias-primas) no processo de produção, dado que quando feito com resíduos e não com matérias-primas virgens é menor.
+                </p>
+
+                <h4>
+                    DIMINUIÇÃO E PREVENÇÃO DE RISCOS NA SAÚDE PÚBLICA
+                </h4>
+                <p>
+                    Os resíduos não são destinados a aterros sanitários com a reciclagem e, portanto, não contaminam o solo, os rios e o ar, que indirectamente causariam doenças, e também não favorecem a proliferação de agentes patogénicos (que causam doenças directamente).
+                </p>
+
+                <h4>
+                    A DIMINUIÇÃO E A PREVENÇÃO DE IMPACTOS AMBIENTAIS
+                </h4>
+                <p>
+                    Tanto os resíduos não degradáveis como os degradáveis, ou orgânicos, por sua enorme quantidade, não são assimilados pelos organismos decompositores, persistindo nos solos e nos corpos hídricos por longos períodos, impossibilitando ou dificultando a sobrevivência de inúmeros seres vivos e, por consequência, causando desequilíbrios ecológicos em todos os ecossistemas da Terra.
+                </p>
+
+                <h4>
+                    ECONOMIA DE RECURSOS NATURAIS
+                </h4>
+                <p>
+                    Diminuição de gastos: na limpeza urbana, no tratamento de doenças, no controle da poluição, na construção de aterros sanitários, na remediação de áreas degradadas, com a energia elétrica (necessária para gerar produtos a partir de matéria prima bruta), entre outros.
+                </p>
+            </div>
+        </div>
+
+
+        <!--Did you know?------------------------------------------------>
+        <div class="col-lg-3 side">
+            <h2>Sabia que...?</h2>
+            <div class="content">
+                <p>
+                    A reciclagem de uma tonelada de garrafas de plástico economiza o uso de energia equivalente a uma casa de duas pessoas por um ano?
+                </p>
+                <img class="side-image" src="~/recursos/Reciclagem/plastic-bottles-388679_1920.jpg" />
+                <a href="https://www.recycleacrossamerica.org/recycling-facts">Fonte</a>
+            </div>
+            <p>
+                O vidro pode ser reciclado e refeito uma quantidade infinita de vezes e nunca se desgasta?
+            </p>
+            <img class="side-image" src="~/recursos/Reciclagem/glass-255281_1920.jpg" />
+            <a href="https://www.recycleacrossamerica.org/recycling-facts">Fonte</a>
+        </div>
+    </div>
+</div>
+
+<a id="linkjogo"></a>
+
+<!-- Secção Começar Jogo da reciclagem-->
+<div class="container-fluid article-background">
+    <div class="row">
+        <div class="margem"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1">
+            <img src="~/recursos/Home/JOGO_RECICLAGEM_HOME.png" style="width:400px; height:270px" />
+        </div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 card-form">
+            <h3>Joga o jogo da reciclagem!</h3>
+            <h5>
+                Ao jogares este jogo estás a contribuir para um ambiente melhor.
+                Contamos contigo!
+            </h5>
+            <div class="margem3"></div>
+            <p>
+                O objetivo deste jogo é de motivar a sociedade a participar mais ativamente na reciclagem dos diversos materiais.
+                À medida que fores reciclando uma maior quantidade de um dado material, a tua pontuação vai aumentando permitindo-te ir subindo os vários níveis, e em cada um deles é desbloqueado um prémio ou um conteúdo recente, que tu nunca tenhas visto.
+                Esperamos que desfrutes desta experiência. Diverte-te!
+            </p>
+            <div class="margem3"></div>
+            <div class="text-center">
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <a class="btn btn-primary" asp-controller="Reciclagem" asp-action="MenuJogoReciclagem" asp-fragment="linkMenuJogo"><span class="glyphicon"></span> Ir para Menu do Jogo </a>
+                }
+                else
+                {
+                    <h4> Não pode jogar sem estar autenticado! </h4>
+                }
+            </div>
+            <div class="margem3"></div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+
+
+
+
+
+
+

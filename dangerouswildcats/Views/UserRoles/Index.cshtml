@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Roles dos utilizadores";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+@model List<dangerouswildcats.Models.UsersAndRoles.UserRolesViewModel>
+
+<div class="margem5"></div>
+
+<h1>Roles do utilizador</h1>
+
+<table class="container table table-striped">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@string.Join(" , ", user.Roles.ToList())</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="UserRoles" asp-action="Manage" asp-route-userId="@user.UserId">Gerir Roles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="container d-grid gap-2">
+
+    <a class="btn btn-primary" asp-controller="Role" asp-action="Index"><span class="glyphicon"></span> Adicionar uma nova Role </a>
+
+</div>

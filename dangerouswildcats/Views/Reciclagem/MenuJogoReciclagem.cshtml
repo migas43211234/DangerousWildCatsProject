@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "MyLayout";
+    ViewData["Title"] = "Menu Jogo da Reciclagem";
+}
+
+@using Microsoft.AspNetCore.Identity
+@using dangerouswildcats.Areas.Identity.Data
+@inject SignInManager<dangerouswildcatsUser> SignInManager
+@inject UserManager<dangerouswildcatsUser> UserManager
+
+@model JogoReciclagem
+
+<div class="margem5"></div>
+
+<!--Código para inserção de background do jogo-->
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-md-6 text-center image">
+            <img src="~/recursos/Reciclagem/JogoReciclagem/MaquinaJogo.png" style="width:1500px; height:1800px" />
+            <div class="col-md-6" id="img_head">
+                <a id="linkMenuJogo"></a>
+                <!--Fim do Código para inserção de background do jogo-->
+
+                <div class="margem2"></div>
+
+                <!--Código para ecrãn do jogo-->
+                <div>
+                    <h1>Menu do Jogo</h1>
+                </div>
+                <div class="container p-3 mb-2 text-dark">
+                    <div class="text-center ">
+                        <img src="~/recursos/Reciclagem/JogoReciclagem/comando_reciclagem.png" style="width:150px; height:100px" />
+                    </div>
+
+                    <div class="margem2"></div>
+
+                    <form asp-action="JogoReciclagem" method="post">
+                        <div asp-validation-summary="All"></div>
+                        <div class="text-center">
+                            <h4>Seleciona o material com que pretendes jogar!</h4>
+                        </div>
+
+                        <div class="margem2"></div>
+
+                        <!--Código da caixa de seleção de material para jogar-->
+                        <div class="row">
+                            <div class="col-4"></div>
+
+                            <div class="col-4">
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" asp-for="UltimoTipoUitilizado">
+                                    <option selected value="Plastico">Plástico</option>
+                                    <option value="Vidro">Vidro</option>
+                                    <option value="Papel">Papel</option>
+                                    <option value="Cortica">Cortiça</option>
+                                </select>
+
+                                <div class="margem5"></div>
+
+                                <!--Código para botões "Reciclar" e "Sair Jogo"-->
+                                <div class="row">
+                                    <div class="col-2"></div>
+                                    <div class="col-auto">
+                                        <div class="text-center">
+                                            <input type="hidden" asp-for="UsernameJogador" value=" @UserManager.GetUserName(User)" />
+                                            <button class="btn btn-primary" type="submit" asp-controller="Reciclagem" asp-action="JogoReciclagem" id="start" onmouseover="setTimeout(playAudio5, 0)">Reciclar</button>
+                                            <audio id="myAudio5">
+                                                <source src="/recursos/Sons/smb_stage_clear.wav" type="audio/wav">
+                                            </audio>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-2"></div>
+
+                                    <div class="col-auto">
+                                        <div class="text-center">
+                                            <a class="btn btn-primary" asp-controller="Reciclagem" asp-action="Index" asp-fragment="linkjogo"> Sair Jogo </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4"></div>
+
+                        </div>
+
+                    </form>
+
+
+                    <div class="margem5"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Fim do Código para ecrãn do jogo-->
+
+<!--JavaScript para efeitos sonoros do jogo-->
+<script>
+    var stageClear = document.getElementById("myAudio5");
+
+    function playAudio5() {
+        stageClear.play();
+    }
+</script>

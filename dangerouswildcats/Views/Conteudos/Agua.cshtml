@@ -1,0 +1,84 @@
+﻿@{
+
+    Layout = "MyLayout";
+    ViewData["Title"] = "Agua";
+
+}
+
+<!--Imagem de Topo-->
+<div class="jumbotron">
+    <img src="~/recursos/Agua/let_it_fall-Water_close_up_photography_wallpaper_medium.jpg" class="img-fluid" id="imgAguas">
+</div>
+
+<!--Titulo e texto de topo da página da água-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Água - Fonte de Vida</h1>
+            <h2 class="tema"><strong>Um Bem Essencial e Precioso!</strong></h2>
+            <h4>A água sempre foi um bem essencial para a humanidade e para todos os seres vivos habitantes deste planeta azul, todavia, nos dias actuais tornou-se <i><strong>urgente</strong></i> preservá-la para nossa<i><strong> sobrevivência</strong></i>!!!</h4>
+            <h4>Nesta página quer-se alertar para toda a problemática causada pelo excessivo consumo e poluição deste recurso natural primordial à vida, bem como possíveis soluções para a sua preservação.</h4>
+        </div>
+    </div>
+
+
+    <!--Imagem e texto dos subtitulos Problemática e Preservação-->
+    <div class="margem2"></div>
+    <div class="row">
+        <div class="col-md-5">
+            <fieldset>
+                <h2><a class="home-a" asp-controller="Conteudos" asp-action="AguaProblematica">Problemática</a></h2>
+                <div class="zoom2">
+                    <a class="home-a" asp-controller="Conteudos" asp-action="AguaProblematica">
+                        <img src="~/recursos/Agua/1-poluicao-da-agua.jpg" class="foto">
+                    </a>
+                </div>
+                <div class="margem6">
+                    <p class="text-left">
+                        Quais são os problemas que enfrentamos actualmente com a água?
+                        Pode-se afirmar que a qualidade e quantidade deste precioso recurso natural são os dois grandes problemas que enfrentamos a nível mundial.
+                    </p>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="col-md-2"></div>
+
+            <div class="col-md-5">
+                <fieldset>
+                    <h2><a class="home-a" asp-controller="Conteudos" asp-action="AguaPreservacao">Preservação</a></h2>
+                    <div class="zoom2">
+                        <a class="home-a" asp-controller="Conteudos" asp-action="AguaPreservacao">
+                            <img src="~/recursos/Agua/2012-PancadaDagua-EvandroMonteiro-30-1680x720.jpg" class="foto">
+                        </a>
+                    </div>
+                    <div class="margem6">
+                        <p class="text-left">
+                            Para inverter esta situação, as autoridades competentes devem procurar a melhor forma de racionar a água de forma sustentável e duradoura.
+                        </p>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+<!--Tabela-->
+<div class="container">
+    <div class="margem3">
+        <legend><h3 class="titulo">Distribuição da Água no Mundo</h3></legend>
+    </div>
+    <p>No nosso planeta podemos encontrar água no estado sólido, liquido e gasoso. Setenta por cento da superfície da Terra é composta por água, sendo que a maior parte é salgada e encontra-se nos oceanos. Apenas 3% é água doce e desta só aproximadamente 1% é acessível para consumo humano e para as suas diversas atividades.</p>
+    <table class="table table-bordered">
+        <tr class="table-info"><th colspan="2">Água Disponível</th><th colspan="3">Água Doce</th><th th colspan="3">Águas Superficiais</th></tr>
+        <tr><td class="t">Água Salgada</td><td class="t">Água Doce</td><td class="t">Glaciares e Regiões Polares</td><td class="t">Águas Subterrâneas</td><td class="t">Águas Superficiais</td><td class="t">Lagos</td><td class="t">Pântanos</td><td class="t">Rios</td></tr>
+        <tr><td>97%</td><td>3%</td><td>68,5%</td><td>30,5%</td><td>1%</td><td>87%</td><td>11%</td><td>2%</td></tr>
+    </table>
+
+
+
+    <!--Imagem Final-->
+    <div class="margem4">
+        <legend><h3 class="titulo">Cobertura de Água Potável em Áreas Rurais</h3></legend>
+        <img src="~/recursos/Agua/mapa_agua.jpg" style="width: 100%;">
+    </div>
+</div>

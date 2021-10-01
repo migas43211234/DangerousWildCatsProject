@@ -1,0 +1,246 @@
+﻿@{
+    Layout = "MyLayout";
+    ViewData["Title"] = "Jogo da Reciclagem";
+}
+
+@using Microsoft.AspNetCore.Identity
+@using dangerouswildcats.Areas.Identity.Data
+@inject SignInManager<dangerouswildcatsUser> SignInManager
+@inject UserManager<dangerouswildcatsUser> UserManager
+
+@model JogoReciclagem
+
+<div class="margem5"></div>
+
+<!--Código para inserção de background do jogo-->
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-md-6 text-center image">
+            @if (Model.UltimoTipoUitilizado == "Plastico")
+            {
+                <img src="~/recursos/Reciclagem/JogoReciclagem/MaquinaJogoPlastico.png" style="width:1500px; height:1800px" />
+            }
+            else if (Model.UltimoTipoUitilizado == "Vidro")
+            {
+                <img src="~/recursos/Reciclagem/JogoReciclagem/MaquinaJogoVidro.png" style="width:1500px; height:1800px" />
+            }
+            else if (Model.UltimoTipoUitilizado == "Papel")
+            {
+                <img src="~/recursos/Reciclagem/JogoReciclagem/MaquinaJogoPapel.png" style="width:1500px; height:1800px" />
+            }
+            else if (Model.UltimoTipoUitilizado == "Cortica")
+            {
+                <img src="~/recursos/Reciclagem/JogoReciclagem/MaquinaJogoCortica.png" style="width:1500px; height:1800px" />
+            }
+            <div class="col-md-6" id="img_head">
+                <!--Fim do Código para inserção de background do jogo-->
+
+                <div class="margem5"></div>
+
+                <!--Código para ecrãn do jogo-->
+                <div>
+                    <h1>Jogo da Reciclagem</h1>
+                </div>
+
+                <div class="container p-3 mb-2 text-dark">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4">
+                            @if (Model.UltimoTipoUitilizado == "Plastico")
+                            {
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+                                    <h10>Username: @UserManager.GetUserName(User) <h9>|</h9> Nivel: @Model.Nivel</h10>
+                                }
+                            }
+                            else if (Model.UltimoTipoUitilizado == "Vidro")
+                            {
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+                                    <h8>Username: @UserManager.GetUserName(User) <h9>|</h9> Nivel: @Model.Nivel</h8>
+                                }
+                            }
+                            else if (Model.UltimoTipoUitilizado == "Papel")
+                            {
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+                                    <h11>Username: @UserManager.GetUserName(User) <h9>|</h9> Nivel: @Model.Nivel</h11>
+                                }
+                            }
+                            else if (Model.UltimoTipoUitilizado == "Cortica")
+                            {
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+                                    <h12>Username: @UserManager.GetUserName(User) <h9>|</h9> Nivel: @Model.Nivel</h12>
+                                }
+                            }
+                        </div>
+                        <div class="col-md-4">
+                            @if (Model.UltimoTipoUitilizado == "Plastico")
+                            {
+                                <a class="btn-outline-primary" asp-controller="Reciclagem" asp-action="MenuJogoReciclagem"><h10>Voltar ao Menu</h10></a>
+                                <h9>|</h9>
+                                <a class="btn-outline-primary" asp-controller="Reciclagem" asp-action="Index" asp-fragment="linkjogo"><h10>Sair Jogo</h10></a>
+                            }
+                            else if (Model.UltimoTipoUitilizado == "Vidro")
+                            {
+                                <a class="btn-outline-primary" asp-controller="Reciclagem" asp-action="MenuJogoReciclagem"><h8>Voltar ao Menu</h8></a>
+                                <h9>|</h9>
+                                <a class="btn-outline-primary" asp-controller="Reciclagem" asp-action="Index" asp-fragment="linkjogo"><h8>Sair Jogo</h8></a>
+                            }
+                            else if (Model.UltimoTipoUitilizado == "Papel")
+                            {
+                                <a class="btn-outline-primary" asp-controller="Reciclagem" asp-action="MenuJogoReciclagem"><h11>Voltar ao Menu</h11></a>
+                                <h9>|</h9>
+                                <a class="btn-outline-primary" asp-controller="Reciclagem" asp-action="Index" asp-fragment="linkjogo"><h11>Sair Jogo</h11></a>
+                            }
+                            else if (Model.UltimoTipoUitilizado == "Cortica")
+                            {
+                                <a class="btn-outline-primary" asp-controller="Reciclagem" asp-action="MenuJogoReciclagem"><h12>Voltar ao Menu</h12></a>
+                                <h9>|</h9>
+                                <a class="btn-outline-primary" asp-controller="Reciclagem" asp-action="Index" asp-fragment="linkjogo"><h12>Sair Jogo</h12></a>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+
+                    <div class="margem4"></div>
+
+                    <div class="text-center ">
+                        <h4>Insira em baixo a quantidade de @Model.UltimoTipoUitilizado que já reciclou</h4>
+                    </div>
+
+                    <div class="margem4"></div>
+
+                    <form asp-action="JogoReciclagem" method="post">
+                        <div asp-validation-summary="All"></div>
+                        <input type="hidden" asp-for="UsernameJogador" value=" @UserManager.GetUserName(User)" />
+                        <input type="hidden" asp-for="UltimoTipoUitilizado" value="@Model.UltimoTipoUitilizado" />
+                        <div class="row mb-3 align-items-center">
+                            <div class="col-3"></div>
+                            <div class="col-auto">
+                                <div class="form-group">
+                                    @if (Model.UltimoTipoUitilizado == "Plastico")
+                                    {
+                                        <label asp-for="NumMaterial" class="col-form-label"><h10>Quantidade de @Model.UltimoTipoUitilizado reciclados: *</h10></label>
+                                    }
+                                    else if (Model.UltimoTipoUitilizado == "Vidro")
+                                    {
+                                        <label asp-for="NumMaterial" class="col-form-label"><h8>Quantidade de @Model.UltimoTipoUitilizado reciclados: *</h8></label>
+                                    }
+                                    else if (Model.UltimoTipoUitilizado == "Papel")
+                                    {
+                                        <label asp-for="NumMaterial" class="col-form-label"><h11>Quantidade de @Model.UltimoTipoUitilizado reciclados: *</h11></label>
+                                    }
+                                    else if (Model.UltimoTipoUitilizado == "Cortica")
+                                    {
+                                        <label asp-for="NumMaterial" class="col-form-label"><h12>Quantidade de @Model.UltimoTipoUitilizado reciclados: *</h12></label>
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <input class="form-control" id="NumMaterial" name="NumMaterial" asp-for="NumMaterial" value="0" />
+                            </div>
+                            <div class="col-auto">
+                                @if (Model.UltimoTipoUitilizado == "Plastico")
+                                {
+                                    <img src="~/recursos/Reciclagem/JogoReciclagem/Plastico.png" style="width:90px; height:75px" />
+                                }
+                                else if (Model.UltimoTipoUitilizado == "Vidro")
+                                {
+                                    <img src="~/recursos/Reciclagem/JogoReciclagem/Vidro.png" style="width:90px; height:75px" />
+                                }
+                                else if (Model.UltimoTipoUitilizado == "Papel")
+                                {
+                                    <img src="~/recursos/Reciclagem/JogoReciclagem/Papel.png" style="width:90px; height:75px" />
+                                }
+                                else if (Model.UltimoTipoUitilizado == "Cortica")
+                                {
+                                    <img src="~/recursos/Reciclagem/JogoReciclagem/Cortica.png" style="width:50px; height:60px" />
+                                }
+                            </div>
+                        </div>
+                        <div class="margem"></div>
+
+                        <!--Código do botão "Adicionar à contagem-->
+                        <div class="form-group text-center">
+                            @if (Model.UltimoTipoUitilizado == "Plastico")
+                            {
+                                <button type="submit" onmouseover="playAudio1()">Adicionar à contagem</button>
+                                <audio id="myAudio1">
+                                    <source src="/recursos/Sons/Plastic-bag-rustling-sound-effect.mp3" type="audio/mp3">
+                                </audio>
+                            }
+                            else if (Model.UltimoTipoUitilizado == "Vidro")
+                            {
+                                <button type="submit" onmouseover="playAudio2()">Adicionar à contagem</button>
+                                <audio id="myAudio2">
+                                    <source src="/recursos/Sons/bottle-break-01.wav" type="audio/wav">
+                                </audio>
+                            }
+                            else if (Model.UltimoTipoUitilizado == "Papel")
+                            {
+                                <button type="submit" onmouseover="playAudio3()">Adicionar à contagem</button>
+                                <audio id="myAudio3">
+                                    <source src="/recursos/Sons/Paper-crumpling-sound-effect.mp3" type="audio/mp3">
+                                </audio>
+                            }
+                            else if (Model.UltimoTipoUitilizado == "Cortica")
+                            {
+                                <button type="submit" onmouseover="playAudio4()">Adicionar à contagem</button>
+                                <audio id="myAudio4">
+                                    <source src="/recursos/Sons/Opening-Wine-Cork-www.fesliyanstudios.com.mp3" type="audio/mp3">
+                                </audio>
+                            }
+                        </div>
+
+                        <div class="margem4"></div>
+
+                        <!--Código do "progress-bar"-->
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-info" style="width: @Model.TotalMaterialNivel%" role="progressbar" aria-valuenow="@Model.TotalMaterialNivel" aria-valuemin="0" aria-valuemax="100">@Model.TotalMaterialNivel</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="margem5"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--Fim do Código para ecrãn do jogo-->
+
+<!--JavaScript para efeitos sonoros do jogo-->
+<script>
+    var plastic = document.getElementById("myAudio1");
+    var glass = document.getElementById("myAudio2");
+    var paper = document.getElementById("myAudio3");
+    var cork = document.getElementById("myAudio4");
+
+    function playAudio1() {
+        plastic.play();
+    }
+
+    function playAudio2() {
+        glass.play();
+    }
+
+    function playAudio3() {
+        paper.play();
+    }
+
+    function playAudio4() {
+        cork.play();
+    }
+</script>
+
+
+
+

@@ -1,0 +1,249 @@
+﻿@{
+
+    Layout = "MyLayout";
+    ViewData["Title"] = "Voluntariado";
+
+}
+
+@using Microsoft.AspNetCore.Identity
+@using dangerouswildcats.Areas.Identity.Data
+@inject SignInManager<dangerouswildcatsUser> SignInManager
+@inject UserManager<dangerouswildcatsUser> UserManager
+
+@model List<CalendarioVoluntariado>
+
+<div class="margem4"></div>
+
+<div class="jumbotron">
+    <img src="/recursos/Voluntariado/Volunteer-Program.jpg" class="img-fluid" id="imgVoluntariado" />
+</div>
+
+<div class="container">
+    <div class="row">
+        <h1>Voluntariado</h1>
+        <p>
+            <!--Texto/Introdução ao tema-->
+            A Dangerous Wildscats conta atualmente com dezenas de voluntários, que, um pouco por todo o país,
+            nos ajudam na tarefa de conservação da natureza e na transmissão dos valores em que acreditamos.
+            São pessoas de todas as idades, que procuram o contacto com a natureza, e recebem em troca
+            o prazer dos bons momentos de convívio assim como a certeza de contribuírem para um futuro comum melhor e com mais qualidade.
+            Integrando a nossa equipa de voluntários, será contactado sempre que nos depararmos com mais uma missão ambiental.
+            A sua participação será sempre facultativa e de acordo com a sua disponibilidade.
+            Junte-se a nós!
+        </p>
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+<!--ARTIGOS----------------------------------------------------------------------->
+<div class="container-fluid article-background">
+    <div class="row">
+        <h1>Associações</h1>
+        <div class="col-lg-3">
+            <a href="https://www.portugalvoluntario.pt/cs2i/homepage?dswid=-3893">
+                <div class="card">
+                    <img class="article-image" src="/recursos/Voluntariado/portugalvoluntario.jpg" alt="Artigo 1" style="width:100%">
+                    <h5>Portugal Voluntário</h5>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-3">
+            <a href="https://bolsadovoluntariado.pt/">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Voluntariado/bolsa do voluntariado.jpg" alt="Artigo 2" style="width:100%">
+                    <h5>Bolsa do Voluntariado</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://www.unvol.org">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Voluntariado/unv.png" alt="Artigo 3" style="width:100%">
+                    <h5>UN Volunteers</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://www.zoo.pt/pt/apoiar/particulares/voluntariado/">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Voluntariado/zoo-lisb.jpg" alt="Artigo 4" style="width:100%">
+                    <h5>Zoo Lisboa</h5>
+                </div>
+            </a>
+        </div>
+
+        <a id="linkvoluntariado"></a>
+
+    </div>
+</div>
+<!--FIM -- ARTIGOS----------------------------------------------------------------------->
+
+
+
+<div class="margem3"></div>
+<h2>6 Razões para fazer <b>VOLUNTARIADO</b></h2>
+<div class="margem"></div>
+<div class="container- voluntariado-limpeza-background">
+    <div class="row how-to">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-6">
+            <div class="margem3"></div>
+            <h4>Ajudar o próximo</h4>
+            <p>
+                Dar um pouco de si a quem mais precisa é a principal razão que move alguém para fazer voluntariado.
+                Ajudar o próximo e fazer algo por quem necessita de uma ajuda ou até de uma simples companhia.
+            </p>
+
+            <h4>Ter bem-estar</h4>
+            <p>
+                Outra das razões para se fazer voluntariado é o bem-estar que isso acarreta. A dois níveis: físico e emocional.
+                O bem-estar físico, porque permite que se mantenha ativo e, a nível emocional, por manter a sua mente concentrada na missão que escolheu e por sentir que está a ser útil para alguém.
+            </p>
+            <h4>Pelo convívio</h4>
+            <p>
+                Para os que se sentem sós, o convívio pode ser a razão para decidir voluntariar-se.
+                Fazer voluntariado é uma forma de partilhar o seu tempo, de reforçar as relações sociais,
+                de conviver com alguém que precisa de si, do seu apoio.
+            </p>
+            <h4>Ganhar experiência ou novas competências</h4>
+            <p>
+                Fazer voluntariado também é uma boa forma de ganhar experiência numa determinada área ou até adquirir novas competências, se decidir fazê-lo numa área diferente da sua formação ou experiência profissional.
+                Eis uma boa razão para, por exemplo, os desempregados fazerem voluntariado ao invés de se manterem passivos à espera que se lhes abra uma porta.
+            </p>
+            <h4>Aumentar a rede de contactos</h4>
+            <p>
+                Outra das razões que o podem convencer a fazer voluntariado é saber o quanto ganha ao nível da sua rede de contactos.
+                E diversificados, já que a experiência como voluntário o vai fazer cruzar-se com pessoas das mais diversas áreas de formação ou profissionais.
+                Terão em comum a vontade de ajudar, mas nunca se sabe se o futuro lhe reserva uma experiência profissional conjunta.
+            </p>
+            <h4>Aprender a contornar obstáculos</h4>
+            <p>
+                Se gosta de desafios, de fazer muito com pouco, de ter obstáculos para contornar, fazer voluntariado é para si.
+                Se o fizer de forma continuada, por exemplo, para uma Organização Não Governamental (ONG), verá que o trabalho é árduo pela falta de meios disponíveis.
+                Mas desafiador porque o vai fazer lutar de forma permanente para ultrapassar as dificuldades e alcançar os objetivos.
+            </p>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3">
+            <div class="container">
+                @foreach (CalendarioVoluntariado c in Model)
+                {
+                    if (c.Aprovacao == true && c.Data >= DateTime.Today)
+                    {
+
+                        <div class="row row-striped">
+                            <div class="col-2 text-right">
+                                <h1><span class="badge badge-secondary">@c.Data.Day</span></h1>
+                                @switch (c.Data.Month)
+                                {
+                                    case 1:
+                                        <h2>Janeiro</h2>;
+                                        break;
+                                    case 2:
+                                        <h2>Fevereiro</h2>;
+                                        break;
+                                    case 3:
+                                        <h2>Março</h2>;
+                                        break;
+                                    case 4: <h2>Abril</h2>;
+                                        break;
+                                    case 5:
+                                        <h2>Maio</h2>;
+                                        break;
+                                    case 6:
+                                        <h2>Junho</h2>;
+                                        break;
+                                    case 7:
+                                        <h2>Julho</h2>;
+                                        break;
+                                    case 8: <h2>Agosto</h2>;
+                                        break;
+                                    case 9:
+                                        <h2>Setembro</h2>;
+                                        break;
+                                    case 10:
+                                        <h2>Outubro</h2>;
+                                        break;
+                                    case 11:
+                                        <h2>Novembro</h2>;
+                                        break;
+                                    case 12:
+                                    default:
+                                        <h2>Outro</h2>;
+                                        break;
+                                }
+
+
+                            </div>
+
+                            <div class="col-10">
+                                <h3 class="text-uppercase"><strong>@c.Titulo</strong></h3>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> @c.Data.DayOfWeek</li>
+                                    @*<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> @c.Horario</li>*@
+                                    <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> @c.Local</li>
+                                </ul>
+                                <p>@c.Descricao</p>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <div class="row">
+                    <div class="col-12">
+                        <form asp-action="NovoEvento" method="post">
+                            <div asp-validation-summary="All"></div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <label>Titulo</label>
+                                    <input class="form-control" id="titulo" name="titulo" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label>Data</label>
+                                    <input class="form-control" type="date" id="Data" name="Data" />
+                                </div>
+                                <div class="col-6">
+                                    <label>Local</label>
+                                    <input class="form-control" id="local" name="local" />
+
+                                </div>
+                            </div>
+                            <div class="row">
+
+
+                                <div class="col-12">
+                                    <label>Descrição</label>
+                                    <textarea class="form-control" id="descricao" name="descricao" rows="2"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-light btn-outline-info">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="margem3"></div>
+                    <div class="margem3"></div>
+                    <div class="margem3"></div>
+                    <div class="margem3"></div>
+                </div>
+            }
+            else
+            {
+                <h4> Não pode adicionar um novo evento sem estar autenticado! </h4>
+            }
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <a class="btn btn-primary" asp-action="NovoVoluntario"><span class="glyphicon"></span> Nova Inscrição </a>
+    </div>
+
+

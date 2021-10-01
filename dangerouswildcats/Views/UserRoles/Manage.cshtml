@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Gerir Roles";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+@model List<dangerouswildcats.Models.UsersAndRoles.ManageUserRolesViewModel>
+
+<div class="margem5"></div>
+
+<form method="post">
+    <div class="container">
+        <div class="card-header">
+            <h2>Gerir as Roles do Utilizador</h2>
+            Adicionar/Remover as roles associadas ao utilizador: <strong>@ViewBag.UserName.</strong>
+        </div>
+        <div class="card-body">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <div class="form-check m-1">
+                    <input type="hidden" asp-for="@Model[i].RoleId" />
+                    <input type="hidden" asp-for="@Model[i].RoleName" />
+                    <input asp-for="@Model[i].Selected" class="form-check-input" />
+                    <label class="form-check-label" asp-for="@Model[i].Selected">
+                        @Model[i].RoleName
+                    </label>
+                </div>
+            }
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        <div class="card-footer">
+            <input type="submit" value="Update" class="btn btn-primary"
+                   style="width:auto" />
+            <a asp-action="Index" asp-route-id="@ViewBag.userId" class="btn btn-primary" style="width:auto">Cancel</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,45 @@
+﻿@{
+
+    Layout = "MyLayout";
+    ViewData["Title"] = "Confirmação de Edição de Voluntários";
+
+}
+
+
+@model Voluntariado
+
+<div class="m-100"></div>
+
+
+<div class="container">
+    <div class="row">
+        <h1>Alteração de dados do voluntário(a) "@Model.Nome" confirmada</h1>
+    </div>
+
+    <div class="margem3"></div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+            <p><b>Data de Nascimento:</b> @Model.DataNascimento </p>
+            <p><b>NIF:</b> @Model.NIF </p>
+            <p><b>Disponibilidade Horária:</b> @Model.Disponibilidade </p>
+            <p><b>Número de Telemóvel:</b> @Model.NumTelemovel</p>
+            <p><b>Email:</b> @Model.Email</p>
+            <p><b>Morada:</b> @Model.Morada</p>
+            <p><b>Localidade:</b> @Model.Localidade</p>
+            <p><b>Código Postal:</b> @Model.CodigoPostal</p>
+            <p><b>Sobre Mim:</b> @Model.SobreMim</p>
+
+            <div class="margem2"></div>
+
+            <div>
+                <a class="btn btn-primary" asp-action="ListaVoluntarios">Voltar à lista de voluntários</a>
+            </div>
+        </div>
+
+        <div class="col-md-4"></div>
+    </div>
+
+</div>

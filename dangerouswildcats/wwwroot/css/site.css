@@ -1,0 +1,925 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+body {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #edf2f7;
+    color: #2c3752;
+}
+
+html {
+    height: 100%;
+}
+
+/*Links------------------------*/
+a {
+    color: lightseagreen;
+}
+
+    a:hover {
+        transition-duration: 0.5s;
+    }
+
+.home-a p {
+    font-weight: 800;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: #2c3752;
+}
+
+/*NAVBAR-----------------------*/
+.navbar {
+    background-color: #1a1f2b;
+    font-size: 15px;
+    font-variant: small-caps;
+    border-bottom: 5px solid #2c3752;
+    margin-bottom: 0;
+}
+
+    .navbar a {
+        color: #7887ad;
+    }
+
+        .navbar a:hover {
+            background-color: lightseagreen;
+            color: #1a1f2b;
+            transition: 0.5s;
+        }
+
+    .navbar .active a {
+        background-color: #2c3752;
+        color: lightseagreen;
+    }
+
+/*-CAROUSEL---------------------------*/
+.carousel-inner > .carousel-item > img {
+    width: 100%;
+    height: 650px;
+}
+
+
+.img-responsive {
+    filter: brightness(80%);
+    width: 100%;
+    height: 500px;
+    object-position: 0 40%;
+    object-fit: cover;
+    position: sticky;
+}
+
+.h1homecarousel {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: white;
+    text-align: center;
+    font-variant-caps: all-small-caps;
+    font-weight: bolder;
+    font-size: 45px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: lightseagreen;
+    text-align: center;
+    font-variant-caps: all-small-caps;
+    font-weight: bolder;
+    font-size: 45px;
+}
+
+h2 {
+    color: #446685;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #7887ad;
+    text-align: center;
+}
+
+h4 {
+    font-size: 20px;
+    color: #7887ad;
+}
+
+h5 {
+    font-size: 17px;
+    text-align: center;
+}
+
+h6 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #1a1f2b;
+    text-align: center;
+    font-variant-caps: all-small-caps;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+h7 {
+    color: #446685;
+    font-size: 20px;
+    text-align: left;
+}
+
+h8 {
+    color: #00b300;
+    font-size: 17px;
+}
+
+h9 {
+    color: #ffffff;
+    font-size: 17px;
+}
+
+h10 {
+    color: #ffff00;
+    font-size: 17px;
+}
+
+h11 {
+    color: #3366ff;
+    font-size: 17px;
+}
+
+h12 {
+    color: #806600;
+    font-size: 17px;
+}
+
+p {
+    text-align: justify;
+}
+
+p2 {
+    text-align: justify;
+    color: snow;
+}
+
+p3 {
+    color: lightseagreen;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 45px;
+}
+
+.carousel-inner p {
+    text-align: center;
+}
+
+
+.foto {
+    width: 540px;
+    height: 250px;
+}
+
+
+.dropdown-content {
+    left: 100%;
+    top: 0;
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/*IMAGENS REDONDAS------*/
+.round-images {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.col-md-1 {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+    .col-md-1 a {
+        padding-top: 10px;
+        text-align: center;
+        color: #7887ad;
+        font-weight: lighter;
+        font-size: 15px;
+        font-variant: small-caps;
+    }
+
+        .col-md-1 a p {
+            width: 100px;
+            text-align: center;
+        }
+
+/*CROP IMAGENS----------------*/
+.jumbotron {
+    padding: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,100), rgba(0,0,0,0) 90%);
+    background-color: #808080;
+}
+
+/*floresta-----------------------*/
+#imgFloresta {
+    width: 100%;
+    height: 400px;
+    object-position: 0 75%; /*mexer no segundo valor para posicionarem a vossa imagem*/
+    object-fit: cover;
+    position: sticky;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,100)), to(rgba(0,0,0,0)));
+}
+
+/*aguas---------------------------*/
+#imgAguas {
+    width: 100%;
+    height: 400px;
+    object-position: 0 50%; /*mexer no segundo valor para posicionarem a vossa imagem*/
+    object-fit: cover;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,100)), to(rgba(0,0,0,0)));
+}
+
+.titulo {
+    color: #7887ad;
+    text-align: left;
+}
+
+.zoom2 {
+    padding: 0px;
+    background-color: rgb(102,205,170);
+    transition: transform .2s; /* Animation */
+    width: 500px;
+    height: 250px;
+    margin: 0px;
+}
+
+
+    .zoom2:hover {
+        transform: scale(1.01);
+    }
+
+
+th {
+    text-align: center;
+}
+
+td {
+    color: blue;
+    text-align: center;
+}
+
+.t {
+    color: black;
+    text-decoration-line: underline;
+}
+
+
+#imgAguasProblematica {
+    width: 100%;
+    height: 400px;
+    object-position: 0 50%; /*mexer no segundo valor para posicionarem a vossa imagem*/
+    object-fit: cover;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,100)), to(rgba(0,0,0,0)));
+}
+
+
+#imgAguasPreservacao {
+    width: 100%;
+    height: 400px;
+    object-position: 0 65%; /*mexer no segundo valor para posicionarem a vossa imagem*/
+    object-fit: cover;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,100)), to(rgba(0,0,0,0)));
+}
+
+.zoom {
+    padding: 5px;
+    background-color: rgb(102,205,170);
+    transition: transform .2s; /* Animation */
+    width: 230px;
+    height: 80px;
+    margin: 70px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+    .zoom:hover {
+        transform: scale(2.0);
+    }
+
+
+/*margens---------------------------*/
+.m-25 {
+    margin: 25px;
+}
+
+.m-30 {
+    margin: 30px;
+}
+
+.m-50 {
+    margin: 50px;
+}
+
+.m-80 {
+    margin: 80px;
+}
+
+.m-100 {
+    margin: 100px;
+}
+
+
+
+
+.margem {
+    margin: 20px 0;
+}
+
+.margem2 {
+    margin: 30px 0;
+}
+
+.margem3 {
+    margin: 40px 0;
+}
+
+.margem4 {
+    margin: 60px 0;
+}
+
+.margem5 {
+    margin: 80px 0;
+}
+
+.margem6 {
+    margin: 10px 0;
+}
+
+.margem7 {
+    margin: 140px 0;
+}
+
+
+/*clima---------------------------*/
+#imgClima {
+    width: 100%;
+    height: 400px;
+    object-position: 0 100%; /*mexer no segundo valor para posicionarem a vossa imagem*/
+    object-fit: cover;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,100)), to(rgba(0,0,0,0)));
+}
+
+/*animais------------------------*/
+#imgAnimais {
+    width: 100%;
+    height: 400px;
+    object-position: 0 20%; /*mexer no segundo valor para posicionarem a vossa imagem*/
+    object-fit: cover;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,100)), to(rgba(0,0,0,0)));
+}
+
+/*oceanos------------------------*/
+#imgOceanos {
+    width: 100%;
+    height: 400px;
+    object-position: 0 20%; /*mexer no segundo valor para posicionarem a vossa imagem*/
+    object-fit: cover;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,100)), to(rgba(0,0,0,0)));
+}
+
+/*voluntariado------------------------*/
+#imgVoluntariado {
+    width: 100%;
+    height: 400px;
+    object-position: 0 35%; /*mexer no segundo valor para posicionarem a vossa imagem*/
+    object-fit: cover;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,100)), to(rgba(0,0,0,0)));
+}
+
+/*reciclagem------------------------*/
+#imgReciclagem {
+    width: 100%;
+    height: 400px;
+    object-position: 0 85%; /*mexer no segundo valor para posicionarem a vossa imagem*/
+    object-fit: cover;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,100)), to(rgba(0,0,0,0)));
+}
+
+/*footer------------------------*/
+footer {
+    border-top: solid 5px lightseagreen;
+    margin-top: 50px;
+    margin-bottom: -50px;
+    background-color: #2c3752;
+    color: lightblue;
+    text-align: center;
+}
+
+    footer p {
+        margin-bottom: 5px;
+        text-align: center;
+    }
+/*#copyright {
+    height: 150px;
+    margin-top: 20px;
+    background-color: #1a1f2b;
+    color: #7887ad;
+    
+}
+
+#copyright p{
+    margin-top: -10px;
+}*/
+
+/*QUOTE------------*/
+.quote-card {
+    background: rgba(200, 221, 232, 0.7);
+    color: #446685;
+    padding: 20px;
+    padding-left: 50px;
+    position: relative;
+    overflow: hidden;
+    min-height: 100px;
+}
+
+    .quote-card p {
+        font-size: 18px;
+        font-style: italic;
+        margin-left: 10px;
+        max-width: 75%;
+    }
+
+    .quote-card cite {
+        font-size: 16px;
+        width: 75%;
+        margin-top: 10px;
+        display: block;
+        text-align: right;
+        opacity: 0.8;
+        border-top: 2px solid rgba(120, 155, 173, 0.5);
+    }
+
+    .quote-card:before {
+        font-family: Georgia, serif;
+        content: "“";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 5em;
+        color: #edf2f7;
+        font-weight: normal;
+    }
+
+    .quote-card:after {
+        font-family: Georgia, serif;
+        content: "”";
+        position: absolute;
+        bottom: -110px;
+        line-height: 100px;
+        right: -32px;
+        font-size: 25em;
+        color: #edf2f7;
+        font-weight: normal;
+    }
+
+blockquote {
+    border-left: 7px solid lightseagreen;
+}
+/*END QUOTE--------------*/
+
+/*Formulario*/ /**/
+.formulario {
+    width: 300px;
+    padding: 30px;
+    border: 1px solid #ccc;
+}
+
+    .formulario p {
+        width: 100%;
+        font-size: 1.5em;
+    }
+
+.field {
+    width: 100%;
+    margin: 15px 0;
+}
+
+    .field label,
+    .field span {
+        padding-left: 10px;
+        font-size: 1.1em;
+        display: block;
+        width: 50%;
+    }
+
+.radiobox label {
+    width: auto;
+    display: inline-block;
+}
+/*
+input[type=text],
+input[type=email],
+textarea {
+    width: 30%;
+    padding-left: 10px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    outline: none;
+}*/
+
+input#nao {
+    margin-left: 30px;
+}
+
+textarea {
+    line-height: 20px;
+    padding: 10px;
+    height: 90px;
+    resize: none;
+}
+/*
+input[type=submit] {
+    display: block;
+    background-color: #ccc;
+    height: 35px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+}*/
+
+.centrar {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*ARTIGOS OCEANOS*/
+
+.col-sm-2 {
+    width: 330px;
+}
+
+.card {
+    width: 100%;
+    background-color: #edf2f7;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+    border-bottom: solid 5px lightseagreen;
+}
+
+    .card:hover {
+        background-color: lightseagreen;
+    }
+
+    .card a:hover {
+        color: white;
+    }
+
+.card-species {
+    width: 100%;
+    background-color: #edf2f7;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+    border-bottom: solid 5px lightseagreen;
+}
+
+    .card-species p {
+        margin-top: 10px;
+        margin-left: 11px;
+        width: 91%;
+    }
+
+
+.article-image {
+    filter: brightness(90%) sepia(20%);
+    width: 270px;
+    height: 185px;
+    object-position: 60% 85%;
+    object-fit: cover;
+    position: sticky;
+}
+
+.species {
+    height: 175px;
+}
+
+.article-background {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background-color: #1a1f2b;
+}
+
+.side {
+    margin-left: 50px;
+    margin-top: 50px;
+    background-color: rgba(200, 221, 232, 0.7);
+    margin-bottom: 50px;
+    border-bottom: solid 4px lightseagreen;
+}
+
+    .side a {
+        text-align: center;
+    }
+
+.side-image {
+    width: 100%;
+    height: 175px;
+    object-position: 0% 85%;
+    object-fit: cover;
+    position: sticky;
+    margin-top: 10px;
+}
+
+.voluntariado-limpeza-background {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background-position: center;
+    background-image: url(/recursos/Voluntariado/LIMPEZA_PRAIA_DWC.png);
+}
+
+/*css do carlos*/
+
+.topnav {
+    overflow: hidden;
+    background-color: #1a1f2b;
+}
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: #2c3752;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+        .topnav a:hover {
+            background-color: #1a1f2b;
+            color: black;
+        }
+
+    .topnav .search-container {
+        float: right;
+    }
+
+    .topnav input[type=text] {
+        padding: 6px;
+        margin-top: -10rem;
+        margin-left: 400px;
+        font-size: 15px;
+        font-family: Tahoma, Geneva, Verdana, sans-serif;
+        border: none;
+        border: 1px solid #ccc;
+    }
+
+    .topnav .search-container button {
+        float: none;
+        padding: 1px 10px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #1a1f2b;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+    }
+
+.icon {
+    color: lightseagreen;
+}
+
+
+
+.col-md-8 {
+    margin-left: 25%;
+    align-content: center;
+}
+
+.card-form {
+    width: 50%;
+    color: #edf2f7;
+}
+
+#more {
+    display: none;
+}
+
+.my-button {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#index-form {
+    margin-bottom: 30px;
+}
+
+#newsletter {
+    margin-top: 100px;
+}
+
+/*HOME*/
+.centralizarImagem {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    vertical-align: central;
+}
+
+/*Contactos*/
+
+.margemEsquerda {
+    margin-left: 475px;
+}
+
+.margemEsquerda2 {
+    margin-left: 100px;
+}
+
+
+/*formulario*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*botão top page*/
+#botao_topo {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 999;
+}
+/* Faz com que a barra retorne precisamente à posição inicial: */
+body, #topo {
+    margin: 0;
+    padding: 0;
+}
+
+/* Faz com que a âncore fique completamente invisível: */
+#topo {
+    display: block;
+    height: 0;
+    width: 0;
+}
+
+
+/*Calendário*/
+.row-striped:nth-of-type(odd) {
+    background-color: #efefef;
+    border-left: 4px #000000 solid;
+}
+
+.row-striped:nth-of-type(even) {
+    background-color: #ffffff;
+    border-left: 4px #efefef solid;
+}
+
+.row-striped {
+    padding: 15px 0;
+}
+
+.list-inline {
+    text-align: center;
+}
+
+.badge {
+    padding: 0 !important;
+    font-size: 50pt !important;
+    color: #446685;
+}
+
+
+/*MenuJogoReciclagem*/
+.panel-heading {
+    background-color: white;
+}
+
+
+.image {
+    position: relative;
+    width: 100%;
+}
+
+/*RankingJogo*/
+.imageranking {
+
+    background: url(../recursos/Reciclagem/JogoReciclagem/rankingjogadores.png);
+    background-repeat: no-repeat;
+    background-size:100vw;
+    width: 100%;
+    position:relative;
+    height:1800px;
+
+}
+
+#img_head {
+    position: absolute;
+    top: 550px;
+    left: 0;
+    width: 100%;
+}
+
+.ranking {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.imgmodal {
+    width: 100%;
+}

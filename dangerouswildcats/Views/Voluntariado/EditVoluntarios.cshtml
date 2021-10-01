@@ -1,0 +1,86 @@
+﻿
+@{
+    Layout = "MyLayout";
+    ViewData["Title"] = "Edição de Voluntários";
+}
+
+@model Voluntariado
+
+<div class="m-100"></div>
+
+<div class="container">
+    <div class="row">
+        <h1>Editar "@Model.Nome"</h1>
+    </div>
+
+    <div class="margem3"></div>
+
+    <form asp-action="EditVoluntarios" method="post">
+        <div asp-validation-summary="All"></div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4">
+                <input type="hidden" name="id" value="@Model.ID" />
+                <input type="hidden" name="nome" value="@Model.Nome" />
+                <div class="form-group">
+                    <p><label name="DataNascimento"><b>Data de Nascimento:</b></label></p>
+                    <p><input type="date" class="form-control" name="DataNascimento" asp-for="@Model.DataNascimento"></p>
+                </div>
+                <div class="form-group">
+                    <p><label for="inputNIF" name="NIF"><b>NIF:</b></label></p>
+                    <p><input id="inputEmail" class="form-control" name="NIF" asp-for="@Model.NIF" data-error="Deu errado" required></p>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <p><label name="Disponibilidade"><b>Disponibilidade Horária:</b></label></p>
+                    <p>
+                        <select class="form-control" name="Disponibilidade" asp-for="@Model.Disponibilidade">
+                            <option value="1-5 Horas Semanais">1-5 Horas Semanais</option>
+                            <option value="5-10 Horas Semanais">5-10 Horas Semanais</option>
+                            <option value="10-25 Horas Semanais">10-25 Horas Semanais</option>
+                            <option value="25-50 Horas Semanais">25-50 Horas Semanais</option>
+                        </select>
+                    </p>
+                </div>
+                <div class="form-group">
+                    <p><label name="NumTelemovel"><b>Número de Telemóvel:</b></label></p>
+                    <p><input class="form-control" name="NumTelemovel" asp-for="@Model.NumTelemovel"></p>
+                </div>
+                <div class="form-group">
+                    <p><label name="Email"><b>Email:</b></label></p>
+                    <p><input type="email" class="form-control" name="Email" asp-for="@Model.Email"></p>
+                </div>
+                <div class="form-group">
+                    <p><label name="Morada"><b>Morada:</b></label></p>
+                    <p><input class="form-control" name="Morada" asp-for="@Model.Morada"></p>
+                </div>
+                <div class="form-group">
+                    <p><label name="Localidade"><b>Localidade:</b></label></p>
+                    <p><input class="form-control" name="Localidade" asp-for="@Model.Localidade"></p>
+                </div>
+                <div class="form-group">
+                    <p><label name="CodigoPostal"><b>Código Postal:</b></label></p>
+                    <p><input class="form-control" name="CodigoPostal" asp-for="@Model.CodigoPostal"></p>
+                </div>
+                <div class="form-group">
+                    <p><label name="SobreMim"><b>Sobre Mim:</b></label></p>
+                    <p><textarea class="form-control" name="SobreMim" asp-for="@Model.SobreMim" cols="50" rows="5" style="width:100%"></textarea></p>
+                </div>
+            </div>
+
+            <div class="col-md-4"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-auto">
+                <button type="reset" class="btn btn-primary" value="Anular">Anular</button>
+                <a class="btn btn-primary" asp-action="ListaVoluntarios">Cancelar</a>
+                <button type="submit" class="btn btn-primary" value="Atualizar">Atualizar</button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </form>
+</div>

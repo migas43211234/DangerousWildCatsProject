@@ -1,0 +1,66 @@
+﻿@{
+
+    Layout = "MyLayout";
+    ViewData["Title"] = "Contactos";
+
+}
+<div class="margem5"></div>
+
+<div class="container">
+    <h1>Contactos</h1>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <form class="form" action="http://symlink.dk/code/php/submit/" method="post" id="Formulario">
+                <div>
+                    <h4>Formulário de Contacto</h4>
+                    <div>
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Introduzir Nome *" name="nome" style="width:90%" required="required">
+                        </div>
+                        <div class="margem"></div>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Introduzir email *" name="email" style="width:90%" required="required">
+                        </div>
+                        <div class="margem"></div>
+                        <div class="form-group">
+                            <label for="nome">Assunto:</label>
+                            <input type="text" class="form-control" id="assunto" placeholder="Introduzir Assunto" style="width:90%" name="assunto">
+                        </div>
+                        <div class="margem"></div>
+                        <p><b>Feedback:</b></p>
+                        <div class="form-group">
+                            <textarea name="Feedback" placeholder="Faz aqui o teu comentário... *" cols="50" rows="5" style="width:90%" required="required"></textarea>
+                        </div>
+                        <div>
+                            <small>Os campos assinalados com (*) são de preenchimento obrigatório</small>
+                        </div>
+                        <div class="margem"></div>
+                        <button type="submit" class="btn btn-light btn-outline-info">Submeter</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md">
+            <h4>Localização</h4>
+            <div class="margem2"></div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3121.5068961085594!2d-8.840972685170657!3d38.52208197963027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1937b2c60f8f47%3A0xa0df10aa0caa2efa!2sInstituto%20Polit%C3%A9cnico%20de%20Set%C3%BAbal!5e0!3m2!1spt-PT!2spt!4v1609950642613!5m2!1spt-PT!2spt" width="500" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="margem3">
+        <h4>A Nossa Morada</h4>
+        <div class="margem2">
+            <p>Campus do IPS - Estefanilha</p>
+            <p>2910-761 Setúbal</p>
+        </div>
+    </div>
+</div>
+<div class="margem7"></div>

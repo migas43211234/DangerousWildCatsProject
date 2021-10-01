@@ -1,0 +1,543 @@
+﻿@{
+
+    Layout = "MyLayout";
+    ViewData["Title"] = "Clima";
+
+}
+
+@model QualidadeArApi
+
+
+<div class="jumbotron">
+
+    <img src="~/recursos/Clima/clima.jpg" class="img-fluid" id="imgClima" />
+
+</div>
+
+<!--Descrição -->
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <h1>Clima</h1>
+            <p>
+
+                As alterações climáticas constituem uma das nossas maiores ameaças ambientais, sociais e económicas.
+                O Painel Intergovernamental sobre Alterações Climáticas (IPCC) afirma que o aquecimento do sistema climático é inequívoco.
+                As observações confirmam o aumentos global das temperaturas do ar e dos oceanos, o derretimento generalizado da
+                neve e do gelo, assim como a subida dos níveis dos mares.
+                Provavelmente, o aquecimento global pode em grande medida ser atribuído às emissões dos gases com efeito de estufa
+                produzidas pelas actividades humanas.
+                “As alterações climáticas são a maior falha de mercado jamais vista no mundo.
+                Sir Nicholas Stern, responsável pelos Serviços Económicos do Governo do Reino Unido
+                e ex-economista principal do Banco Mundial, 2006”
+                Nos últimos 150 anos, a temperatura média mundial subiu quase 0,8ºC e cerca de 1ºC na Europa.
+                Onze dos últimos doze anos (1995-2006) encontram-se entre os 12 anos mais quentes no registo instrumental da
+                temperatura de superfície global (desde 1850). Se não forem tomadas medidas a nível mundial para limitar as
+                emissões, o Painel Intergovernamental para as Alterações Climáticas prevê que a temperatura média global à
+                superfície poderá aumentar de 1,8ºC a 4ºC até 2100. Isto significa que o aumento verificado na temperatura
+                desde a época pré-industrial seria superior a 2ºC. Para além deste limite, podem ocorrer alterações irreversíveis
+                e catastróficas.
+
+            </p>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+<!--ARTIGOS----------------------------------------------------------------------->
+<div class="container-fluid article-background">
+    <div class="row">
+        <h1>Artigos</h1>
+        <div class="col-lg-3">
+            <a href="https://climate.nasa.gov/news/3061/2020-tied-for-warmest-year-on-record-nasa-analysis-shows/">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Clima/artigo1_temperatura.jpg" alt="Artigo 1" style="width:100%">
+                    <h5>2020 empatado como o ano mais quente já registrado, mostra a análise da NASA</h5>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-3">
+            <a href="https://climate.nasa.gov/news/3057/land-ecosystems-are-becoming-less-efficient-at-absorbing-carbon-dioxide/">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Clima/artigo2_ecossistemasterrestres.jpg" alt="Artigo 2" style="width:100%">
+                    <h5>Ecossistemas terrestres estão se tornando menos eficientes na absorção de dióxido de carbono</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://climate.nasa.gov/news/3063/nasa-satellites-help-quantify-forests-impacts-on-global-carbon-budget/">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Clima/artigo3_impactocarbono.jpg" alt="Artigo 3" style="width:100%">
+                    <h5>Os satélites da NASA ajudam a quantificar o impacto global de carbono</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://climate.nasa.gov/news/3062/warming-seas-are-accelerating-greenlands-glacier-retreat/">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Clima/artigo4_aquecimentomares.jpg" alt="Artigo 4" style="width:100%">
+                    <h5>O aquecimento dos mares está acelerando a retirada das geleiras da Groenlândia</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+<!--Quotes----------------------------------------------------------------------->
+<div class="container">
+    <div class="row">
+        <blockquote class="quote-card">
+            <p>
+
+                Climate change is real. It is happening right now, it is the most urgent threat facing our entire species and we need to work collectively together and stop procrastinating.
+
+            </p>
+            <cite>
+
+                Leonardo Di Caprio
+
+            </cite>
+        </blockquote>
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+<!--Primeiro tema -->
+<div class="container" id="VSimages">
+    <div class="row">
+        <div class="col-sm">
+            <fieldset>
+                <legend><b>Impactos das alterações climáticas</b></legend>
+                <p>
+                    Já foram observados e prevê-se que se tornem mais evidentes. Também se prevê que a ocorrência de situações
+                    meteorológicas extremas, incluindo ondas de calor, secas e inundações, será mais frequente e intensa.
+                    Na Europa, os maiores aumentos de temperatura registam-se no sul da Europa e na região Árctica. A precipitação
+                    diminui no sul da Europa e aumenta no norte e noroeste. Estes factores conduzem a impactos nos ecossistemas
+                    naturais, na saúde humana e nos recursos hídricos. Os sectores económicos, tais como a silvicultura, a agricultura,
+                    o turismo e a construção civil sofrerão a maior parte das consequências negativas. O sector agrícola do norte da
+                    Europa pode beneficiar com um aumento limitado da temperatura
+                    Para combater as alterações climáticas, as emissões de gases de estufa a nível mundial devem ser significativamente
+                    reduzidas e devem ser implementadas políticas nesse sentido.
+                    As actividades humanas são as principais fontes de emissões de gases com efeito de estufa, nomeadamente:
+                </p>
+
+                <p>A queima de combustíveis fósseis para a produção de electricidade, transportes, indústria e habitações;</p>
+                <p>A agricultura e a utilização dos solos, por exemplo, a desflorestação;</p>
+                <p>Os aterros sanitários;</p>
+                <p>E a utilização industrial de gases fluorinados.</p>
+
+            </fieldset>
+        </div>
+        <div class="col-sm" id="arvoreClima">
+            <img src="~/recursos/Clima/arvoreclima.jpg" style="width: 350px; height: 250px; margin-top: 50px;">
+        </div>
+    </div>
+</div>
+<div class="container" id="VSimages">
+    <div class="row">
+        <div class="col-sm">
+            <fieldset>
+                <p>
+                    Mesmo que as políticas e os esforços para reduzir as emissões sejam eficazes, algumas mudanças climáticas
+                    serão inevitáveis. Por esse motivo, devemos também desenvolver estratégias e acções de adaptação aos
+                    impactos das alterações climáticas na Europa e, em especial, fora das suas fronteiras, dado que os países
+                    menos desenvolvidos estão entre os mais vulneráveis, tendo menos capacidade técnica e financeira para
+                    realizar essa adaptação.
+                </p>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+<!-- Segundo tema -->
+<div class="container" id="VSimages">
+    <div class="row">
+        <div class="col-sm">
+            <fieldset>
+                <legend><b>Causas das alterações climáticas</b></legend>
+                <p>
+                    O impacto das atividades humanas, nomeadamente a queima de combustíveis fósseis, o abate da floresta tropical e a
+                    pecuária, no clima e na temperatura da Terra é cada vez maior.
+                    As enormes quantidades de gases com efeito de estufa provenientes destas atividades juntam-se às naturalmente
+                    presentes na atmosfera, reforçando o efeito de estufa e o aquecimento global.
+                </p>
+            </fieldset>
+
+        </div>
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+<!-- Terceiro tema -->
+<div class="container" id="VSimages">
+    <div class="row">
+        <div class="col-sm">
+            <fieldset>
+                <legend><b>Gases com efeito de estufa</b></legend>
+
+                <p>
+                    Alguns gases presentes na atmosfera terrestre funcionam como as paredes de vidro de uma estufa, retendo o
+                    calor do sol e impedindo-o de escapar para o espaço.
+
+                    Muitos destes gases estão naturalmente presentes na atmosfera, mas a atividade humana está a aumentar as
+                    concentrações de alguns deles, em especial:
+                    <ul>
+                        <li>dióxido de carbono (CO2)</li>
+                        <li>metano</li>
+                        <li>óxido nitroso</li>
+                        <li>gases fluorados</li>
+                    </ul>
+                </p>
+                <p>
+
+                    O CO2, o principal gás com efeito de estufa produzido pela atividade humana, é responsável por 63 % do
+                    aquecimento mundial antropogénico. A sua concentração na atmosfera é atualmente 40 % mais elevada do que
+                    no início da era industrial.
+
+                </p>
+            </fieldset>
+        </div>
+        <div class=" col-1"></div>
+        <div class="col-sm">
+            <h1 class="text-center">Qualidade do Ar</h1>
+            <div class="text-center">
+                <form asp-action="clima" method="post">
+
+                    <label>Cidade:</label>
+                    <input name="Cidade">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="margem"></div>
+            @if (Model != null && Model.CityName != null)
+            {
+                <div class="text-center">
+                    <h2>
+                        Veja aqui a qualidade do ar em
+                        <b>@Model.CityName</b>
+                    </h2>
+                </div>
+                <div class="margem"></div>
+                <table class="table">
+                    <tbody>
+
+                        <tr>
+                            <th>
+                                <b>So2</b> Dióxido de Enxofre - @Model.Data[0].So2 <a href="https://pt.wikipedia.org/wiki/Di%C3%B3xido_de_enxofre" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-square" viewBox="0 0 16 16">
+                                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                                    </svg>
+                                </a>
+
+                            </th>
+                            <th>
+                                @if (Model.Data[0].So2 < 100)
+                                {
+                                    <p>Nível Optimo</p>
+                                }
+                                else if (Model.Data[0].So2 < 200)
+                                {
+                                    <p>Nivel Bom </p>
+                                }
+                                else if (Model.Data[0].So2 < 350)
+                                {
+                                    <p>Nivel Mau </p>
+                                }
+                                else if (Model.Data[0].So2 < 500)
+                                {
+                                    <p>Nivel Muito Mau </p>
+                                }
+                                else
+                                {
+                                    <p> Nível Péssimo</p>
+                                }
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <b>No3</b> Dióxido de Nitrogénio - @Model.Data[0].No2  <a href="https://pt.wikipedia.org/wiki/Di%C3%B3xido_de_nitrog%C3%A9nio" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-square" viewBox="0 0 16 16">
+                                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                                    </svg>
+                                </a>
+                            </th>
+                            <th>
+                                @if (Model.Data[0].No2 < 40)
+                                {
+                                    <p>Nível Optimo</p>
+                                }
+                                else if (Model.Data[0].No2 < 100)
+                                {
+                                    <p>Nivel Bom </p>
+                                }
+                                else if (Model.Data[0].No2 < 200)
+                                {
+                                    <p>Nivel Mau </p>
+                                }
+                                else if (Model.Data[0].No2 < 400)
+                                {
+                                    <p>Nivel Muito Mau </p>
+                                }
+                                else
+                                {
+                                    <p> Nível Péssimo</p>
+                                }
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <b>O3</b> Ozono - @Model.Data[0].O3  <a href="https://pt.wikipedia.org/wiki/Oz%C3%B4nio" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-square" viewBox="0 0 16 16">
+                                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                                    </svg>
+                                </a>
+                            </th>
+                            <th>
+                                @if (Model.Data[0].O3 < 80)
+                                {
+                                    <p>Nível Optimo</p>
+                                }
+                                else if (Model.Data[0].O3 < 100)
+                                {
+                                    <p>Nivel Bom </p>
+                                }
+                                else if (Model.Data[0].O3 < 180)
+                                {
+                                    <p>Nivel Mau </p>
+                                }
+                                else if (Model.Data[0].O3 < 240)
+                                {
+                                    <p>Nivel Muito Mau </p>
+                                }
+                                else
+                                {
+                                    <p> Nível Péssimo</p>
+                                }
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                Partículas PM25 - @Model.Data[0].Pm25  <a href="https://en.wikipedia.org/wiki/Particulates" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-square" viewBox="0 0 16 16">
+                                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                                    </svg>
+                                </a>
+                            </th>
+                            <th>
+                                @if (Model.Data[0].Pm25 < 10)
+                                {
+                                    <p>Nível Optimo</p>
+                                }
+                                else if (Model.Data[0].Pm25 < 20)
+                                {
+                                    <p>Nivel Bom </p>
+                                }
+                                else if (Model.Data[0].Pm25 < 25)
+                                {
+                                    <p>Nivel Mau </p>
+                                }
+                                else if (Model.Data[0].Pm25 < 50)
+                                {
+                                    <p>Nivel Muito Mau </p>
+                                }
+                                else
+                                {
+                                    <p> Nível Péssimo</p>
+                                }
+
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                Partículas PM10 - @Model.Data[0].Pm10  <a href="https://pt.wikipedia.org/wiki/PM10" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-square" viewBox="0 0 16 16">
+                                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                                    </svg>
+                                </a>
+                            </th>
+                            <th>
+                                @if (Model.Data[0].Pm10 < 20)
+                                {
+                                    <p>Nível Optimo</p>
+                                }
+                                else if (Model.Data[0].Pm10 < 35)
+                                {
+                                    <p>Nivel Bom </p>
+                                }
+                                else if (Model.Data[0].Pm10 < 50)
+                                {
+                                    <p>Nivel Mau </p>
+                                }
+                                else if (Model.Data[0].Pm10 < 100)
+                                {
+                                    <p>Nivel Muito Mau </p>
+                                }
+                                else
+                                {
+                                    <p> Nível Péssimo</p>
+                                }
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+
+            }
+            else
+            {
+                <div class=" text-center">
+                    <strong>Insira o nome duma Cidade.</strong>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+
+
+@*<div class="col-sm" id="mundoclima">
+        <img src="~/recursos/Clima/Mundoclima.jpg" style="width: 350px; height: 250px; margin-top:50px;">
+    </div>*@
+
+   
+<div class="container" id="VSimages">
+    <div class="row">
+        <div class="col-sm">
+            <fieldset>
+                <p>
+                    Outros gases com efeito de estufa são emitidos em quantidades mais pequenas mas retêm mais o calor do que
+                    o CO2, em alguns casos cem vezes mais. O metano e o óxido nitroso são responsáveis, respetivamente,
+                    por 19 % e 6 % do aquecimento antropogénico.
+                </p>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+
+<!--Quarto tema -->
+<div class="container" id="VSimages">
+    <div class="row">
+        <div class="col-sm">
+            <fieldset>
+                <legend><b>Causas do aumento das emissões</b></legend>
+
+                <p>
+                    A queima de carvão, petróleo ou gás produz dióxido de carbono e óxido nitroso.
+                    Abate de florestas (desflorestação): as árvores ajudam a regular o clima absorvendo o CO2 presente na atmosfera
+                    . Quando são abatidas, esse efeito benéfico desaparece e o carbono armazenado nas árvores é libertado para a
+                    atmosfera, reforçando o efeito de estufa.
+                    Aumento da atividade pecuária: as vacas e as ovelhas produzem grandes quantidades de metano durante a digestão
+                    dos alimentos.
+                    Os fertilizantes que contêm azoto produzem emissões de óxido nitroso.
+                    Os gases fluorados têm um efeito de aquecimento muito forte, que chega a ser 23 000 vezes superior ao do CO2.
+                    Felizmente, são libertados em pequenas quantidades e estão a ser gradualmente eliminados ao abrigo da regulamentação
+                    da UE.
+                    Aquecimento global
+                    As centrais elétricos e outras instalações industriais são os principais emissores de dióxido de carbono.
+                    A atual temperatura média do planeta é 0,85º C superior à do século XIX. Cada uma das três últimas décadas foi mais
+                    quente do qualquer outra década desde 1850, ano em que começou a haver registos.
+
+
+                </p>
+            </fieldset>
+        </div>
+
+        <div class="col-sm" id="co2clima">
+            <img src="~/recursos/Clima/co2clima.jpg" style="width: 350px; height: 250px; margin-top:50px;">
+        </div>
+
+    </div>
+</div>
+<div class="container" id="VSimages">
+    <div class="row">
+        <div class="col-sm">
+            <fieldset>
+                Para os cientistas mais conceituados a nível internacional na área do clima, as atividades humanas são, quase
+                certamente, a principal causa do aquecimento observado desde meados do século XX.
+
+                Um aumento de 2º C em relação à temperatura na era pré-industrial é considerado pelos cientistas como o
+                limite acima do qual existe um risco muito mais elevado de consequências ambientais à escala mundial
+                perigosas e, eventualmente, catastróficas. Por esta razão, a comunidade internacional reconheceu a
+                necessidade de manter o aquecimento global abaixo de 2.º C.
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+<!-- Quinto tema-->
+<div class="container" id="VSimages">
+    <div class="row">
+        <div class="col-sm">
+            <fieldset>
+                <legend><b>Todos somos responsáveis</b></legend>
+
+                <p>
+                    As mudanças climáticas são a maior ameaça ambiental do século XXI, com consequências profundas e transversais
+                    a várias áreas da sociedade: económica, social e ambiental.
+                    Todos nós, sem excepção, estamos a ser afectados por esta questão: cidadãos comuns, empresas, governos,
+                    economias e, mais importante de todos, a natureza.
+
+                    Mudanças climáticas sempre foram registadas ao longo dos milhares de anos que o planeta Terra tem. O problema
+                    prende-se com o facto de, no último século, o ritmo entre estas variações climáticas ter sofrido uma forte
+                    aceleração e a tendência é que tome proporções ainda mais caóticas se não forem tomadas medidas.
+
+                    A ocorrência de ondas de calor e secas são fenómenos cada vez mais frequentes, e as consequentes perdas
+                    agrícolas representam uma ameaça real para as economias mundiais.
+
+                    No cerne destas mudanças estão os chamados gases de efeito estufa, cujas emissões têm sofrido um aumento
+                    acentuado. O CO2 (dióxido de carbono) é o principal gás negativo desses designados de efeito estufa, e são
+                    consequência directa do uso/queima de combustíveis fósseis como o carbono, o petróleo e o gás com fins de
+                    produção energética.
+                    É, por isso, imprescindível reduzir as emissões deste tipo de gases. Como? Eliminando, progressivamente, o uso massivo dos combustíveis fósseis, substituindo-os pelas energias renováveis, fomentando a poupança de energia e eficiência energética.
+
+                </p>
+
+            </fieldset>
+
+        </div>
+
+        <div class="col-sm" id="responsaveisClima">
+            <img src="~/recursos/Clima/responsaveisclima.jpg" style="width: 350px; height: 250px; margin-top:50px;">
+        </div>
+
+    </div>
+
+</div>
+<div class="container" id="VSimages">
+    <div class="row">
+        <div class="col-sm">
+            <fieldset>
+                <legend><b></b></legend>
+                <p>
+                    A actividade humana foi apontada, em 2007, por cientistas especializados nesta área e reunidos sob o Painel Intergovernamental de Alterações Climáticas, como sendo a principal causa destas mudanças do clima.
+
+                    Ao mantermos uma atitude inerte e apática perante esta questão, corremos o risco de sermos expostos a eventos climáticos extremos e imprevisíveis (como os que têm vindo a ser noticiados nos últimos tempos) e com efeitos nefastos para todo o mundo!
+
+                    A temperatura, no século passado, registou um acréscimo de 0,76ºC. A previsão é que no presente suba entre 1,1 a 6,4ºC, dependendo das medidas mitigadoras que sejam encetadas.
+                </p>
+            </fieldset>
+        </div>
+    </div>
+</div>

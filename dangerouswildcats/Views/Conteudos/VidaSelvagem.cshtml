@@ -1,0 +1,485 @@
+﻿@{
+
+    Layout = "MyLayout";
+    ViewData["Title"] = "VidaSelvagem";
+
+}
+
+@using Microsoft.AspNetCore.Identity
+@using dangerouswildcats.Areas.Identity.Data
+@inject SignInManager<dangerouswildcatsUser> SignInManager
+@inject UserManager<dangerouswildcatsUser> UserManager
+
+@model List<AnimaisExtincao>
+
+<div class="jumbotron">
+    <img src="/recursos/VidaSelvagem/vidaselvagemanimais002.jpg" class="img-fluid" id="imgAnimais" />
+</div>
+
+<div class="container">
+    <div class="row">
+        <h1>Vida Selvagem</h1>
+        <p>
+            <!--Texto/Introdução ao tema-->
+            Os ecossistemas mais frágeis estão a ser as principais vítimas das ações do Homem e, como tal,
+            daqui a menos de um século poderemos ser os únicos seres vivos a habitar a Terra.
+            Será que é este é o teu objetivo? Queres continuar a contribuir para a extinção do mundo animal?
+            Não achas que está na hora de tomarmos mais medidas preventivas em prol do ambiente?
+            O mundo animal está a entrar em rutura. Alguns animais esforçam-se para se adaptar ao inadaptável,
+            alguns animais lutam para sobreviver numa realidade a que não pertencem e o futuro não se augura nada brilhante.
+            Tudo na vida tem um princípio, um meio e um fim. Infelizmente é mesmo assim, mas não acha que é muito egoísmo da nossa parte,
+            enquanto seres racionais, contribuirmos para a extinção dos animais? Eles não têm culpa das nossas opções e, muito menos,
+            das nossas ambições, por isso está na hora de ajudar a colocar um travão nesta sangria despropositada que estamos a causar no mundo animal.
+        </p>
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+<!--ARTIGOS----------------------------------------------------------------------->
+<div class="container-fluid article-background">
+    <div class="row">
+        <h1>Artigos</h1>
+        <div class="col-lg-3">
+            <a href="https://www.natgeo.pt/animais/2019/09/o-que-perdemos-com-extincao-animal">
+                <div class="card">
+                    <img class="article-image" src="/recursos/VidaSelvagem/south-china-tiger.jpg" alt="Artigo 1" style="width:100%">
+                    <h5>Perigos da Extinção Animal</h5>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-3">
+            <a href="https://www.natgeo.pt/animais/2021/02/a-maior-populacao-mundial-de-rinocerontes-caiu-70-numa-decada">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/VidaSelvagem/kruger-national-park-rhino-decline-grazing.jpg" alt="Artigo 2" style="width:100%">
+                    <h5>População de Rinocerontes</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://www.natgeo.pt/animais/2021/01/zebras-com-manchas-e-listas-estranhas-podem-ser-um-aviso-para-o-futuro-da-especie">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/VidaSelvagem/zebra-akagera.jpg" alt="Artigo 3" style="width:100%">
+                    <h5>Zebras com Manchas</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://www.natgeo.pt/animais/2020/11/primatas-ameacados-de-extincao-enfrentam-risco-elevado-de-contrair-covid-19">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/VidaSelvagem/sumatran-orangutan-covid_v2.jpg" alt="Artigo 4" style="width:100%">
+                    <h5>Primatas Ameaçados</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!--FIM -- ARTIGOS----------------------------------------------------------------------->
+
+<div class="margem3"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <fieldset>
+                <legend><b>O que é uma espécie ameaçada?</b></legend>
+                <p>
+                    Uma espécie ameaçada é uma espécie cujas populações estão a diminuir gradualmente, ao longo dos anos, colocando-a em risco.
+                    Muitos países têm legislação que protege estas espécies, proibindo a caça e protegendo os seus habitats.
+                    O problema é que a legislação não é suficiente para evitar que um número crescente de espécies deixe de existir.
+                </p>
+            </fieldset>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-md">
+            <img src="/recursos/VidaSelvagem/Tubarão-Branco-21.jpg" style="width: 375px; height: 215px;">
+        </div>
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md">
+            <img src="/recursos/VidaSelvagem/135355.jpg" style="width: 400px; height: 210px;">
+        </div>
+
+        <div class="col-md">
+            <fieldset>
+                <legend><b>5 dicas para teres uma atitude mais consciente e ativa na conservação da Vida Selvagem</b></legend>
+                <ul>
+                    <li>Opta por produtos cruelty-free</li>
+                    <li>Não compres artigos feitos com <i>ANIMAIS</i></li>
+                    <li>Pratica voluntariado</li>
+                    <li>Torna-te padrinho de um <i>ANIMAL</i></li>
+                    <li>Ganha voz e partilha as boas práticas nas tuas redes sociais</li>
+                </ul>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+
+<div class="margem3"></div>
+
+<!-- Espécies em Vias de Extinção -->
+<h2>Espécies em vias de <b>EXTINÇÃO</b></h2>
+<div class="margem"></div>
+<div class="container-fluid article-background">
+    <div class="main">
+
+        <!-- Gallery -->
+        <div class="row">
+            <div class="margem"></div>
+            <div class="col-md">
+                <div class="d-grid">
+                    <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/focamongedohavai-cke.jpg" alt="Foca-monge-do-Havaí" style="width:400px;height:200px;">
+                    <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#focamonge" aria-expanded="false" aria-controls="focamonge" style="margin-bottom:8px">
+                        Foca Monge do Havaí
+                    </button>
+                    <div class="collapse" id="focamonge">
+                        <div class="card card-body" style="background:black;">
+                            <p2>
+                                A foca monge do Havaí é uma espécie de foca que habita o arquipélago havaiano.
+                                Ela vem sofrendo muito com a poluição dos mares, caça predatória e o comércio ilegal, dentre outras razões que contribuem para o risco de extinção.
+                                Estima-se que atualmente existem aproximadamente 1000 animais vivos. Segundo a IUCN a foca-monge-do-Havaí está classificada em perigo de extinção.
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="d-grid">
+                    <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/lobovermelho-cke.jpg" alt="Lobo-Vermelho" style="width:400px;height:200px;">
+                    <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#lobovermelho" aria-expanded="false" aria-controls="lobovermelho" style="margin-bottom:8px">
+                        Lobo Vermelho
+                    </button>
+                    <div class="collapse" id="lobovermelho">
+                        <div class="card card-body" style="background:black;">
+                            <p2>
+                                O lobo vermelho é nativo da América do Norte e quase foi extinto na década de 80.
+                                As principais causas foram a destruição de seu habitat e a política e caça predatórias da época.
+                                Considerado um animal criticamente ameaçado de extinção, atualmente o lobo-vermelho encontra-se em cativeiro com aproximadamente 200 indivíduos da mesma espécie.
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="d-grid">
+                    <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/elefanteasiatico-cke.jpg" alt="Elefante-asiático" style="width:400px;height:200px;">
+                    <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#elefanteasiatico" aria-expanded="false" aria-controls="elefanteasiatico" style="margin-bottom:8px">
+                        Elefante Asiático
+                    </button>
+                    <div class="collapse" id="elefanteasiatico">
+                        <div class="card card-body" style="background:black;">
+                            <p2>
+                                O elefante asiático é uma espécie considerada em perigo de extinção, segundo a classificação da IUCN.
+                                Ele tem sofrido muito com a destruição de seu habitat bem como a caça ilegal destinada ao comércio de marfim.
+                                Menor que os elefantes africanos, esta espécie é explorada para fins turísticos e como meio de transporte.
+                                Importante ressaltar que esse elefante, na religião hindu, está associado à figura de Ganesha, Deus da sabedoria.
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="d-grid">
+                    <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/tigredebengala-0-cke.jpg" alt="Tigre-de-Bengala" style="width:400px;height:200px;">
+                    <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#tigredebengala" aria-expanded="false" aria-controls="tigredebengala" style="margin-bottom:8px">
+                        Tigre de Bengala
+                    </button>
+                    <div class="collapse" id="tigredebengala">
+                        <div class="card card-body" style="background:black;">
+                            <p2>
+                                O tigre de bengala é nativo do sul asiático, sendo uma espécie considerada criticamente ameaçada de extinção, conforme classificação e estudos da IUCN.
+                                O número de tigres-de-bengala diminuiu consideravelmente decorrente do comércio de peles, destruição de seu habitat e a caça ilegal.
+                                Segundo pesquisas, atualmente existem menos de 2000 no mundo. No Paquistão, essa espécie encontra-se extinta.
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="margem"></div>
+        <div class="row">
+            <div class="col-md">
+                <div class="d-grid">
+                    <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/linceiberico-cke.jpg" alt="Lince-Iberico" style="width:400px;height:200px;">
+                    <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#linceiberico" aria-expanded="false" aria-controls="linceiberico" style="margin-bottom:8px">
+                        Lince Ibérico
+                    </button>
+                    <div class="collapse" id="linceiberico">
+                        <div class="card card-body" style="background:black;">
+                            <p2>
+                                O lince ibérico é nativo da península ibérica e atualmente é considerado uma espécie em perigo crítico de extinção, segundo estudos da IUCN.
+                                O grande problema enfrentado por esse felino, existente somente em Portugal e Espanha, é a degradação de seu habitat.
+                                Segundo pesquisas, atualmente existem menos de 200 indivíduos vivos da espécie.
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="d-grid">
+                    <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/diabodatasmania-cke.jpg" alt="Diabo-da-Tasmânia" style="width:400px;height:200px;">
+                    <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#diabotasmania" aria-expanded="false" aria-controls="diabotasmania" style="margin-bottom:8px">
+                        Diabo da Tasmânia
+                    </button>
+                    <div class="collapse" id="diabotasmania">
+                        <div class="card card-body" style="background:black;">
+                            <p2>
+                                O diabo da Tasmânia é um marsupial nativo da ilha da Tasmânia, na Austrália.
+                                De acordo com as pesquisas e acompanhamento realizado pela IUCN, ele é considerado em perigo de extinção.
+                                Os fatores que causaram sua diminuição são a caça ilegal, atropelamento, destruição de seu habitat e doenças.
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="d-grid">
+                    <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/goriladasmontanhas-cke.jpg" alt="Gorila-das-montanhas" style="width:400px;height:200px;">
+                    <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#gorila-das-montanhas" aria-expanded="false" aria-controls="gorila-das-montanhas" style="margin-bottom:8px">
+                        Gorila das Montanhas
+                    </button>
+                    <div class="collapse" id="gorila-das-montanhas">
+                        <div class="card card-body" style="background:black;">
+                            <p2>
+                                O gorila-das-montanhas é considerado o maior primata vivo no mundo.
+                                Classificado como criticamente ameaçado de extinção, esta espécie vem sendo acompanhada por pesquisadores para evitar sua extinção.
+                                Devido a caça ilegal e perda de habitat o número de indivíduos dessa espécie diminuiu drasticamente.
+                                Estima-se que a população do gorila-das-montanhas seja de aproximadamente mil indivíduos, considerando inclusive aqueles que vivem em cativeiro.
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="d-grid">
+                    <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/kakapo-cke.jpg" alt="Kakapo" style="width:400px;height:200px;">
+                    <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#kakapo" aria-expanded="false" aria-controls="kakapo" style="margin-bottom:8px">
+                        Kakapo
+                    </button>
+                    <div class="collapse" id="kakapo">
+                        <div class="card card-body" style="background:black;">
+                            <p2>
+                                O kakapo é uma ave natural da Nova Zelândia e está classificada como criticamente ameaçada de extinção, segundo acompanhamento da IUCN.
+                                Conhecido também como papagaio-mocho, o kakapo possui hábitos noturnos.
+                                A principal causa da diminuição da espécie foi consequência da caça ilegal para comércio de sua carne e penas.
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="margem"></div>
+
+        <div class="row">
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md">
+                    <button class="btn btn-light btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#vermais" aria-expanded="false" aria-controls="vermais">
+                        Mais espécies em vias de <b>EXTINÇÃO</b>
+                    </button>
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+            <div class="margem"></div>
+            <div class="collapse" id="vermais">
+                <div class="row">
+                    <div class="col-md">
+                        <div class="d-grid">
+                            <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/orangotangodasumatra-cke.jpg" alt="Orangotango-da-Sumatra" style="width:400px;height:200px;">
+                            <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#Orangotango-da-Sumatra" aria-expanded="false" aria-controls="Orangotango-da-Sumatra" style="margin-bottom:8px">
+                                Orangotango da Sumatra
+                            </button>
+                            <div class="collapse" id="Orangotango-da-Sumatra">
+                                <div class="card card-body" style="background:black;">
+                                    <p2>
+                                        O orangotango-da-Sumatra é uma espécie selvagem nativa de Bornéu e Sumatra.
+                                        Classificado como criticamente ameaçado de extinção pela IUCN, este animal vem sofrendo com a degradação de seu habitat.
+                                        Outros motivos que contribuem para a diminuição desta espécie é o comércio e tráfico ilegal de animais, além da caça predatória, realizada principalmente por povos indígenas locais.
+                                    </p2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md">
+                        <div class="d-grid">
+                            <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/zebradegrevy-cke.jpg" alt="Zebra-de-grévy" style="width:400px;height:200px;">
+                            <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#Zebra-de-grévy" aria-expanded="false" aria-controls="Zebra-de-grévy" style="margin-bottom:8px">
+                                Zebra de Grévy
+                            </button>
+                            <div class="collapse" id="Zebra-de-grévy">
+                                <div class="card card-body" style="background:black;">
+                                    <p2>
+                                        A zebra de grévy é uma espécie que está classificada como em perigo de extinção.
+                                        De acordo com dados da IUCN, estima-se que a população deste animal seja inferior a 2400 indivíduos.
+                                        A principal ameaça para sua extinção está relacionada à perda do habitat e diminuição dos recursos essenciais para a vida, como água e alimentos.
+                                    </p2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md">
+                        <div class="d-grid">
+                            <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/camelobactriano-cke.jpg" alt="Camelo-bactriano" style="width:400px;height:200px;">
+                            <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#Camelo-bactriano" aria-expanded="false" aria-controls="Camelo-bactriano" style="margin-bottom:8px">
+                                Camelo Bactriano
+                            </button>
+                            <div class="collapse" id="Camelo-bactriano">
+                                <div class="card card-body" style="background:black;">
+                                    <p2>
+                                        O camelo bactriano é uma espécie nativa da Ásia Central.
+                                        Atualmente, a maioria das espécies vivas são domesticados pelas populações locais.
+                                        Classificado como criticamente ameaçado de extinção pela IUCN, estima-se que atualmente existam menos de mil indivíduos vivos na natureza.
+                                    </p2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md">
+                        <div class="d-grid">
+                            <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/porcopigmeu-cke.jpg" alt="porco-pigmeu" style="width:400px;height:200px;">
+                            <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#porco-pigmeu" aria-expanded="false" aria-controls="porco-pigmeu" style="margin-bottom:8px">
+                                Porco Pigmeu
+                            </button>
+                            <div class="collapse" id="porco-pigmeu">
+                                <div class="card card-body" style="background:black;">
+                                    <p2>
+                                        O porco-pigmeu é uma espécie nativa da Índia, local onde está considerado como criticamente ameaçado de extinção, de acordo com estudos da IUCN.
+                                        Estima-se que existam apenas 250 indivíduos adultos vivos na natureza.
+                                        A principal ameaça para o porco-pigmeu é a degradação do meio ambiente e a perda do habitat.
+                                    </p2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="margem"></div>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="d-grid">
+                            <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/iguanadacaudaroxa-cke.jpg" alt="iguana-de-cauda-roxa" style="width:400px;height:200px;">
+                            <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#iguana-de-cauda-roxa" aria-expanded="false" aria-controls="iguana-de-cauda-roxa" style="margin-bottom:8px">
+                                Iguana de Cauda Roxa
+                            </button>
+                            <div class="collapse" id="iguana-de-cauda-roxa">
+                                <div class="card card-body" style="background:black;">
+                                    <p2>
+                                        A iguana-de-cauda-roxa é um réptil que está classificado como em perigo de extinção, de acordo com a IUCN.
+                                        Este animal vive em florestas subtropicais e tem a perda de seu habitat como a principal ameaça de extinção.
+                                    </p2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md">
+                        <div class="d-grid">
+                            <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/jacaredachina-cke.jpg" alt="jacaré-da-China" style="width:400px;height:200px;">
+                            <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#jacaré-da-China" aria-expanded="false" aria-controls="jacaré-da-China" style="margin-bottom:8px">
+                                Jacaré da China
+                            </button>
+                            <div class="collapse" id="jacaré-da-China">
+                                <div class="card card-body" style="background:black;">
+                                    <p2>
+                                        O jacaré-da-China é uma espécie de jacaré que encontra-se classificada como criticamente ameaçada de extinção, segundo a IUCN.
+                                        Estima-se que atualmente existam apenas 200 indivíduos na natureza e 10.000 em cativeiro.
+                                    </p2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md">
+                        <div class="d-grid">
+                            <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/rinocerontedejava-cke.jpg" alt="rinoceronte-de-Java" style="width:400px;height:200px;">
+                            <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#rinoceronte-de-Java" aria-expanded="false" aria-controls="rinoceronte-de-Java" style="margin-bottom:8px">
+                                Rinoceronte de Java
+                            </button>
+                            <div class="collapse" id="rinoceronte-de-Java">
+                                <div class="card card-body" style="background:black;">
+                                    <p2>
+                                        O rinoceronte-de-Java é uma espécie classificada como criticamente ameaçada de extinção pela IUCN.
+                                        Em alguns países já é considerado extinto.
+                                        Uma das principais causas da extinção deste animal é a caça ilegal.
+                                    </p2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md">
+                        <div class="d-grid">
+                            <img class="figure-img img-fluid rounded" src="/recursos/VidaSelvagem/abutredebicofino-cke.jpg" alt="abutre-de-bico-fino" style="width:400px;height:200px;">
+                            <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#abutre-de-bico-fino" aria-expanded="false" aria-controls="abutre-de-bico-fino" style="margin-bottom:8px">
+                                Abutre de Bico Fino
+                            </button>
+                            <div class="collapse" id="abutre-de-bico-fino">
+                                <div class="card card-body" style="background:black;">
+                                    <p2>
+                                        O abutre-de-bico-fino é uma espécie que está classificada como criticamente ameaçada de extinção pela IUCN.
+                                        Uma das causas que justificam a ameça de extinção deste animal é o envenenamento indireto,
+                                        pois eles se alimentam de carne de gado morto que recebeu medicamentos.
+                                    </p2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="margem"></div>
+                <div class="row">
+                    @foreach (AnimaisExtincao a in Model)
+                    {
+                        if (a.Aprovacao == true)
+                        {
+                        <div class="col-md-3">
+                            <div class="d-grid">
+                                <img class="figure-img img-fluid rounded" src="~/@a.URLFicheiro" style="width:400px;height:200px;">
+                                <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="@String.Concat("#e", String.GetHashCode(a.NomeAnimal).ToString())" aria-expanded="false" aria-controls="@String.Concat("e", String.GetHashCode(a.NomeAnimal).ToString())" style="margin-bottom:8px">
+                                    @a.NomeAnimal
+                                </button>
+                                <div class="collapse" id="@String.Concat("e", String.GetHashCode(a.NomeAnimal).ToString())">
+                                    <div class="card card-body" style="background:black;">
+                                        <p2>
+                                            @a.Descricao
+                                        </p2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+
+                    }
+                </div>
+                <div class="margem"></div>
+                <div class="text-center">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <a class="btn btn-info btn-outline-dark text-white" asp-action="NovoAnimal"><span class="glyphicon"></span> Adicionar Animal </a>
+                    }
+                    else
+                    {
+                        <h4> Não pode adicionar um animal sem estar autenticado! </h4>
+                    }
+                </div>
+                <div class="margem"></div>
+            </div>
+        </div>
+    </div>
+</div>

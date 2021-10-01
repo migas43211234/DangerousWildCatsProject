@@ -1,0 +1,504 @@
+﻿@{
+
+    Layout = "MyLayout";
+    ViewData["Title"] = "Oceanos";
+
+}
+
+@using Microsoft.AspNetCore.Identity
+@using dangerouswildcats.Areas.Identity.Data
+@inject SignInManager<dangerouswildcatsUser> SignInManager
+@inject UserManager<dangerouswildcatsUser> UserManager
+
+@model List<AnimaisExtincaoOceano>
+
+<!--Imagem principal-------------------------------------------------------------->
+<div class="jumbotron">
+    <img src="~/recursos/Oceanos/imagemprincipal_oceanos.jpg" class="img-fluid" id="imgOceanos" />
+</div>
+
+<!--Descrição---------------------------------------------------------------------->
+<div class="container">
+    <div class="row">
+        <h1>Oceanos</h1>
+        <p>
+            Os oceanos são uma superpotência planetária.
+            Lar de ecossistemas espectaculares e de valiosos animais selvagens, o oceano cobre 71% da superfície do
+            planeta Terra e sustenta a vida de biliões de pessoas. Regula o nosso clima, produz metade do oxigénio que respiramos,
+            e provoca o ciclo da água, o qual produz chuva e água doce. Estudos mostram que quando os ecossistemas dos oceanos são resilientes,
+            a população em redor também se o torna. Um grupo de investigadores analisaram mais do que 100 estudos para compreender melhor a
+            conecção entre a protecção marinha e a saúde humana, e descobriram que a maior parte da população beneficia de oceanos saudáveis
+            em termos sociais, de saúde, económicos, governamentais e benefícios ecológicos.
+        </p>
+        <p>
+            Mas esses benefícios não são garantidos.
+            Depois de décadas de poluição e desgaste dos oceanos,
+            esses serviços estão a ser interrompidos. Uma em cada três reservas de peixes são sobreexploradas.
+        </p>
+        <p>
+            Centenas de milhares de ecossistemas marinhos, aves marinhas e tartarugas marinhas.
+            Metade de todos os recifes e manguezais já desapareceram. Ainda temos tempo de dar aos oceanos o que precisa para continuarem
+            resilientes com todas estas ameaçadas, mas temos de trabalhar juntos.
+        </p>
+    </div>
+
+</div>
+
+<!--ARTIGOS----------------------------------------------------------------------->
+<div class="container-fluid article-background">
+    <div class="row">
+        <h1>Artigos</h1>
+        <div class=" margem2"></div>
+        <div class="col-lg-3">
+            <a href="https://blogs.ei.columbia.edu/2011/06/13/losing-our-coral-reefs/">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Oceanos/artigo1.png" alt="Artigo 1" style="width:100%">
+                    <h5>Perder os nossos recifes</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://www.nationalgeographic.com/environment/habitats/ocean-threats/">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Oceanos/artigo2.jpg" alt="Artigo 2" style="width:100%">
+                    <h5>Ameaças ao oceanos</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://www.iucn.org/resources/issues-briefs/marine-plastics">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Oceanos/artigo3.jpg" alt="Artigo 3" style="width:100%">
+                    <h5>Plásticos marinhos</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://www.nytimes.com/2019/09/25/climate/climate-change-oceans-united-nations.html">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Oceanos/artigo4.jpg" alt="Artigo 4" style="width:100%">
+                    <h5>Alterações climáticas</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!--What you can do------------------------------------------------>
+<div class="container">
+    <h1>O que podemos fazer</h1>
+    <div class="row how-to">
+        <div class="col-lg-8">
+
+            <h4>REDUZA A SUA PEGADA ECOLÓGICA E O CONSUMO DE ENERGIA</h4>
+            <p>
+                Reduza os efeitos das alterações climáticas nos oceanos, deixando o carro em casa, sempre que possível, e tome consciência do seu consumo energético tanto em casa, como no trabalho. Há algumas práticas que pode adotar para minimizar o impacto do seu estilo de vida sobre o ambiente. Substitua as tradicionais lâmpadas incandescentes por lâmpadas fluorescentes compactas, prefira as escadas aos elevadores, agasalhe-se ou use uma ventoinha para evitar sobrecarregar o termóstato.
+            </p>
+
+            <h4>PREFIRA PEIXE E MARISCO SAUDÁVEL E SUSTENTÁVEL</h4>
+            <p>
+                As populações de peixes à escala mundial estão a diminuir rapidamente, em virtude da procura, perda de habitats e práticas de pesca não sustentáveis. Quando comprar peixe e marisco ou jantar fora, ajude a reduzir a procura de espécies sobre-exploradas, ao optar por aquelas que sejam, simultaneamente, saudáveis e sustentáveis.
+            </p>
+            <h4>CONSUMA MENOS PLÁSTICO</h4>
+            <p>
+                Os plásticos que habitam e poluem os oceanos contribuem para destruir os habitats, enredam e matam, anualmente, dezenas de milhares de criaturas marinhas. Para limitar o seu impacto, prefira uma garrafa de água que possa reaproveitar, acondicione os alimentos em recipientes reutilizáveis, leve consigo um saco de pano ou outro reutilizável, quando for às compras e recicle sempre que possível.
+            </p>
+            <h4>CUIDE DAS PRAIAS</h4>
+            <p>
+                Quer goste de mergulhar, fazer surf ou simplesmente relaxar na praia, assegure-se de que deixa o espaço limpo. Explore e desfrute dos oceanos sem interferir com a vida selvagem, remover pedras ou arrancar corais. Eleve a fasquia e sensibilize os outros para a necessidade de respeitar a vida marinha ou participe em ações de limpeza das praias da sua zona.
+            </p>
+            <h4>NÃO ADQUIRA BENS QUE EXPLORAM A VIDA MARINHA</h4>
+            <p>
+                Alguns produtos podem ser nocivos e infligir danos nos delicados recifes de coral, com sérias repercussões nas populações de peixes. Evite comprar objetos como bijutaria de coral, acessórios para o cabelo feitos a partir da carapaça da tartaruga-de-pente e produtos derivados do tubarão.
+            </p>
+            <h4>SEJA DONO DE UM ANIMAL DE ESTIMAÇÃO E AMIGO DOS OCEANOS</h4>
+            <p>
+                Leia os rótulos da ração do seu animal de estimação e tenha em consideração a sustentabilidade das espécies de peixe e marisco, quando definir a dieta alimentar do seu animal. Nunca despeje a areia da caixa do seu gato na sanita, pois poderá conter organismos patogénicos nocivos à vida marinha. Evite encher o aquário de casa com peixes de água salgada capturados na natureza e nunca liberte um peixe de aquário nos oceanos ou noutros cursos de água, uma prática que pode introduzir espécies alheias e nocivas ao ecossistema existente.
+            </p>
+            <h4>APOIE AS ORGANIZAÇÕES QUE TRABALHAM PARA PROTEGER OS OCEANOS</h4>
+            <p>Muitos institutos e organizações debatem-se para proteger os habitats dos oceanos e a vida marinha. Procure uma organização nacional e considere a hipótese de apoiá-la financeiramente ou de se oferecer como voluntário para trabalhar no terreno ou na defesa de direitos. Se viver perto da costa, integre uma delegação ou um grupo local e envolva-se em projetos da sua zona de residência.</p>
+
+            <h4>PROMOVA A MUDANÇA NO SEIO DA SUA COMUNIDADE</h4>
+            <p>Informe-se sobre as políticas relativas aos oceanos anunciadas pelas entidades públicas antes de expressar o seu voto ou contacte os seus representantes locais para manifestar o seu apoio aos projetos de conservação da vida marinha. Considere apadrinhar restaurantes e mercearias que oferecem apenas espécies de marisco sustentáveis e manifeste as suas preocupações, se identificar a presença de uma espécie ameaçada na ementa ou sobre a bancada de marisco.</p>
+
+            <h4>NAVEGUE NOS OCEANOS DE FORMA RESPONSÁVEL</h4>
+            <p>
+                Se praticar navegação de recreio ou pesca, se andar de caiaque ou praticar outras atividades recreativas em mar, faça-o de forma responsável. Nunca atire nada para o mar e tenha em atenção a vida marinha nas águas envolventes. Se está a pensar fazer um cruzeiro nas próximas férias, faça alguma pesquisa e opte pela oferta mais ecológica.
+            </p>
+
+            <h4>EDUQUE-SE A SI MESMO A RESPEITO DOS OCEANOS E DA VIDA MARINHA</h4>
+            <p>
+                Toda a vida na Terra está ligada aos oceanos e àqueles que os habitam. Quanto mais aprender sobre os desafios que enfrenta este sistema vital, mais se empenhará na defesa da sua sustentabilidade, por isso partilhe o conhecimento para educar e inspirar outros.
+            </p>
+        </div>
+
+        <!--Did you know?------------------------------------------------>
+        <div class="col-lg-3 side" style=" margin-bottom: 100px;">
+
+            <h2>Sabia que...?</h2>
+            <div class="content">
+                <div class="content">
+                    <div class=" margem2"></div>
+                    <p>
+                        Podemos perder os recifes de coral em 30 anos?
+                    </p>
+                    <img class="side-image" src="~/recursos/Oceanos/did-you-know/galeria1.jpg" />
+                    <a href="https://www.natgeo.pt/photography/2017/08/podemos-perder-os-recifes-de-coral-em-30-anos?image=01-iucn-coral-reef">Fonte</a>
+                    <div class="content">
+                        <div class=" margem2"></div>
+                        <p>
+                            Existem mais artefactos debaixo dos mares que em todos os museus juntos?
+                        </p>
+                        <img class="side-image" src="~/recursos/Oceanos/did-you-know/didjakno2.jpg" />
+                        <a href="https://www.trafalgar.com/real-word/10-unbelievable-facts-ocean/">Fonte</a>
+
+                    </div>
+                    <div class="content">
+                        <div class=" margem2"></div>
+                        <p>
+                            Os plásticos são o elemento mais comum encontrado nos oceanos?
+                        </p>
+                        <img class="side-image" src="~/recursos/Oceanos/did-you-know/didjakno3.jpg" />
+                        <a href="https://www.conserve-energy-future.com/various-ocean-pollution-facts.php">Fonte</a>
+                    </div>
+                    <div class="content">
+                        <div class=" margem2"></div>
+                        <p>
+                            Existem mais microplásticos no oceano do que o número de estrelas na Via Láctea?
+                        </p>
+                        <img class="side-image" src="~/recursos/Oceanos/did-you-know/didjakno4.jpg" />
+                        <a href="https://www.onegreenplanet.org/news/microplastics-in-the-ocean-now-outnumber-stars-in-our-galaxy/">Fonte</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Endangered species      -------------------------------------------------------->
+<h2>Espécies em vias de <b>EXTINÇÃO</b></h2>
+<div class="margem"></div>
+<div class="container-fluid article-background">
+    <div class="main">
+
+        <!-- Gallery -->
+        <div class="row">
+            <div class="margem"></div>
+            <div class="col-md">
+                <div class="d-grid">
+                    <img class="figure-img img-fluid rounded" src="~/recursos/Oceanos/endangered-species/vaquita1.jpg" alt="Vaquita" style="width:400px;height:200px;">
+                    <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#vaquita" aria-expanded="false" aria-controls="vaquita" style="margin-bottom:8px">
+                        Vaquita
+                    </button>
+                    <div class="collapse" id="vaquita">
+                        <div class="card card-body" style="background:black;">
+                            <p2>
+                                A vaquita é o mamífero marinho mais raro do mundo e um dos animais mais ameaçados.
+                                O nome significa "pequena vaca" em espanhol, e  são uma espécie única de golfinho, com um corpo pequeno e robusto e uma cabeça redonda.
+                                Com menos de 30 indivíduos restantes, a vaquita está em perigo crítico e em risco de extinção iminente. Habitam apenas um corpo de água no Golfo da Califórnia e reproduzem-se apenas uma vez a cada dois anos, mas apesar disso, são os humanos que causam a maior destruição à população das vaquitas.
+                                Até 15% das vaquitas morrem nas redes de pesca todos os anos, e a espécie também é ameaçada pelo uso de agrotóxicos clorados. Em resposta à ameaça, o governo mexicano proibiu as redes de pesca fatais, embora a pesca ilegal ainda ocorra, e a população de vaquita continua a diminuir.
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="d-grid">
+                    <img class="figure-img img-fluid rounded" src="~/recursos/Oceanos/endangered-species/tubaraobaleia2.jpg" alt="Tubarão baleia" style="width:400px;height:200px;">
+                    <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#tubaraobaleia" aria-expanded="false" aria-controls="tubaraobaleia" style="margin-bottom:8px">
+                        Tubarão Baleia
+                    </button>
+                    <div class="collapse" id="tubaraobaleia">
+                        <div class="card card-body" style="background:black;">
+                            <p2>
+                                Os tubarões-baleia são os maiores peixes do oceano, conhecidos por crescerem até 18 metros de comprimento, pesar até 19.000 quilos e viver de 70 a 130 anos. Cada tubarão-baleia possui marcas exclusivas de bolinhas no seu corpo, semelhantes a uma impressão digital humana.
+                                Têm bocas com quase um metro de largura, com mais de 350 filas de dentes, mas esses gigantes gentis alimentam-se principalmente de plâncton, usando as suas bocas como sistema de filtragem.
+                                Em 2016, essas belas criaturas foram classificadas como ameaçadas de extinção na Lista Vermelha de Espécies Ameaçadas da IUCN, com uma redução alarmante de avistamentos.
+                                O seu desaparecimento deve-se em grande parte à pesca comercial e à caça ilegal, com grande procura por parte da China pela sua carne, barbatanas e óleo que são vendidos para alimentação, e a sua pele para sacos.
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="d-grid">
+                    <img class="figure-img img-fluid rounded" src="~/recursos/Oceanos/endangered-species/tartarugadepente3.jpg" alt="Tartaruga de pente" style="width:400px;height:200px;">
+                    <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#tartarugaPente" aria-expanded="false" aria-controls="tartarugaPente" style="margin-bottom:8px">
+                        Tartaruga de Pente
+                    </button>
+                    <div class="collapse" id="tartarugaPente">
+                        <div class="card card-body" style="background:black;">
+                            <p2>
+                                A tartaruga de pente é uma das menores espécies de tartaruga, distinguindo-se pelas suas impressionantes carapaças douradas e castanhas.
+                                É a espécie de tartaruga mais ameaçada do mundo, e é classificada como criticamente ameaçada pela IUCN, com uma população global estimada de 8.000, com apenas 1.000 fêmeas nidificando.
+                                Infelizmente, as tartarugas são caçadas pelas suas carapaças, que são vendidas ilegalmente para a produção de jóias e produtos ornamentais.
+                                O comércio de carapaças de tartaruga foi proibido em 1973, mas esses produtos, como brincos, colares, óculos escuros e pentes bekko (usados ​​no tradicional vestido de noiva japonês), ainda são amplamente vendidos nas Caraíbas, Ásia e América Central.
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="d-grid">
+                    <img class="figure-img img-fluid rounded" src="~/recursos/Oceanos/endangered-species/lontra4.jpg" alt="Lontra" style="width:400px;height:200px;">
+                    <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#lontra" aria-expanded="false" aria-controls="lontra" style="margin-bottom:8px">
+                        Lontra
+                    </button>
+                    <div class="collapse" id="lontra">
+                        <div class="card card-body" style="background:black;">
+                            <p2>
+                                A linda lontra marinha é um dos mamíferos marinhos mais pequenos da Terra e desempenha um papel crucial no nosso ecossistema, alimentando-se de ouriços-do-mar, o que permite que as florestas de algas se desenvolvam. São uma espécie incrível, ostentando uma série impressionante de habilidades.
+                                As lontras marinhas podem viver a vida inteira sem sair da água; são uma das poucas espécies na Terra que usam ferramentas para sobreviver (usam pedras para abrir conchas); é o único mamífero marinho que pode virar pedras no fundo do mar; consomem entre 25 a 40% do peso corporal todos os dias; e eles adoravelmente dão as mãos enquanto dormem, para não se separarem.
+                                Também têm a pele mais densa que qualquer outra espécie na Terra, com cerca de 1 milhão de fios de cabelo por polegada quadrada. Infelizmente, o seu pêlo também é a maior ameaça, devido à caça desenfreada de pele de lontra marinha pelos humanos.
+                            </p2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-------Fim da Primeira Row-------------------->
+    <div class="margem"></div>
+    <div class="row">
+        <div class="col-md">
+            <div class="d-grid">
+                <img class="figure-img img-fluid rounded" src="~/recursos/Oceanos/endangered-species/baleiaazul5.jpg" alt="Baleia Azul" style="width:400px;height:200px;">
+                <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#baleiaAzul" aria-expanded="false" aria-controls="baleiaAzul" style="margin-bottom:8px">
+                    Baleia Azul
+                </button>
+                <div class="collapse" id="baleiaAzul">
+                    <div class="card card-body" style="background:black;">
+                        <p2>
+                            São os gigantes do mar, mas as baleias são das espécies marinhas mais perseguidas do mundo. Sofrem com a caça excessiva de gordura e óleo. Algumas das espécies mais ameaçadas incluem a baleia azul, a baleia franca do Atlântico Norte e a baleia-comum.
+                            Como o maior animal da Terra, as baleias azuis têm, em média, 25 metros de comprimento e pesam cerca de 140.000 quilos. Apesar do seu estado supremo, é uma das espécies mais ameaçadas de extinção, com uma população estimada de apenas 10.000 a 25.000.
+                            A Baleia Franca do Atlântico Norte é uma das espécies de baleia mais em vias de extinção, com uma população estimada de 300 a 350, e nenhum crescimento observado em várias décadas.
+
+                            A baleia-comum é o segundo maior mamífero do mundo e tem uma população em vias de extinção de apenas 30.000, devido à caça às baleias.
+                        </p2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="d-grid">
+                <img class="figure-img img-fluid rounded" src="~/recursos/Oceanos/endangered-species/riverdolphin6.jpg" alt="Golfinho do rio" style="width:400px;height:200px;">
+                <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#golfinhoRio" aria-expanded="false" aria-controls="golfinhoRio" style="margin-bottom:8px">
+                    Golfinho Rio
+                </button>
+                <div class="collapse" id="golfinhoRio">
+                    <div class="card card-body" style="background:black;">
+                        <p2>
+                            Os golfinhos do rio são outra espécie criticamente ameaçada, com o golfinho do rio Irrawaddy, o golfinho do rio Ganges, o golfinho do rio Amazonas rosa e o boto sem barbatana Yangtze, todos em perigo de extinção num futuro próximo.
+
+                            Existem aproximadamente 6.000 golfinhos do rio Irrawaddy, com cerca de 90 restantes na população do rio Mekong no sudeste da Ásia, enquanto o golfinho rosa do rio Amazonas tem uma população restante de cerca de 9.000.
+
+                            Existem apenas cerca de 30 golrinhos do rio Ganges restantes no rio Ganga, enquanto um censo de 2018 do golfinho sem barbatana Yangtze mostrou uma população de apenas 1.012 indivíduos.
+
+                            Estas espécies estão ameaçadas por uma miríade de questões, incluindo perda de habitat, caça ilegal, construção de barragens e projetos de irrigação e emaranhamento em equipamentos de pesca.
+                        </p2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="d-grid">
+                <img class="figure-img img-fluid rounded" src="~/recursos/Oceanos/endangered-species/floridamanatee7.jpg" alt="Manatim" style="width:400px;height:200px;">
+                <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#manatim" aria-expanded="false" aria-controls="manatim" style="margin-bottom:8px">
+                    Manatim
+                </button>
+                <div class="collapse" id="manatim">
+                    <div class="card card-body" style="background:black;">
+                        <p2>
+                            Os manatins são uma das criaturas mais tolos da natureza, com focinhos curtos e corpos robustos. Também conhecidas como vacas do mar, estas criaturas não são gordas - os seus grandes corpos estão apenas cheios de órgãos.
+
+                            São os maiores herbívoros do oceano, crescendo até quatro metros de comprimento, pesando cerca de 600 quilos e alimentam-se de 10 a 15% de seu peso corporal a cada dia. Estes doces gigantes não têm predadores naturais (apenas humanos) e até coexistem pacificamente com crocodilos.
+
+                            Infelizmente, os manatins são uma espécie ameaçada em vias de extinção devido a colisões de barcos, emaranhamento em equipamentos de pesca e poluição do habitat. A população atual é estimada em cerca de 6.000 indivíduos.
+
+                            O Manatee Sanctuary Act nos EUA proíbe a perturbação destas espécies, no entanto, um total de 804 manatins morreram nas águas da Flórida em 2018, com colisões de barcos causando 119 dessas mortes. A crise de algas tóxicas também foi relatada como tendo causado cerca de 100 mortes em 2018.
+                        </p2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="d-grid">
+                <img class="figure-img img-fluid rounded" src="~/recursos/Oceanos/endangered-species/Galapagos-penguin8.jpg" alt="Pinguim das galápagos" style="width:400px;height:200px;">
+                <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#pinguimDasGalapagos" aria-expanded="false" aria-controls="pinguimDasGalapagos" style="margin-bottom:8px">
+                    Pinguim das Galápagos
+                </button>
+                <div class="collapse" id="pinguimDasGalapagos">
+                    <div class="card card-body" style="background:black;">
+                        <p2>
+                            Sendo a única espécie de pinguim encontrada ao norte do equador e nas Ilhas Galápagos, este pinguim é bastante único.
+
+                            É a menor das espécies de pinguins da América do Sul e geralmente sobrevive de 15 a 20 anos na natureza. São um dos poucos animais no mundo que acasalam com um parceiro para o resto da vida.
+
+                            O pinguim de Galápagos é uma espécie ameaçada de extinção, com menos de 2.000 sobreviventes na natureza. Estes números estão a diminuir drasticamente devido ao aquecimento das temperaturas do mar e ao declínio das fontes de alimentos, provocadas pelas oscilações do sul do El Niño (uma variação irregular nos ventos e nas temperaturas da superfície do mar).
+
+                            Eles também são ameaçados por espécies introduzidas, como cães e gatos, poluição e captura acidental em equipamentos de pesca.
+
+                            O lobo-marinho das Galápagos é outra espécie marinha fascinante endêmica das Ilhas Galápagos. Com uma população em declínio de cerca de 10.000 a 15.000, o lobo marinho também é classificado como ameaçado de extinção pela IUCN.
+                        </p2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim da Segunda Row----------------------------------->
+    <div class="margem"></div>
+    <div class="row">
+        <div class="col-md">
+            <div class="d-grid">
+                <img class="figure-img img-fluid rounded" src="~/recursos/Oceanos/endangered-species/hawaiianmonkseal9.jpg" alt="Foca Monge do Havai" style="width:400px;height:200px;">
+                <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#focamongedohavai" aria-expanded="false" aria-controls="focamongedohavai" style="margin-bottom:8px">
+                    Foca Monge do Havaí
+                </button>
+                <div class="collapse" id="focamongedohavai">
+                    <div class="card card-body" style="background:black;">
+                        <p2>
+                            Nativa das ilhas havaianas, a foca-monge do havaí é um dos dois únicos mamíferos endêmicos do Havaí (junto com o morcego havaiano). Embora a maioria das focas viva em regiões frias, esta espécie única prefere viver num clima tropical.
+
+                            Também são uma das duas últimas focas-monge sobreviventes na Terra (incluindo a foca-monge do Mediterrâneo), e foram classificadas como espécie em extinção desde 1976.
+
+                            Embora os tubarões-tigre e os tubarões das Galápagos sejam conhecidos por caçar focas-monge havaianas, os seus maiores predadores são os humanos.
+
+                            Existem apenas cerca de 1.400 focas-monge havaianas restantes, e o governo havaiano está a trabalhar para proteger estes animais e impedir que as pessoas os magoem.
+
+                            O desenvolvimento da costa tem ameaçado os seus habitats, e eles também têm uma das maiores taxas de emaranhamento em equipamentos de pesca entre todos os mamíferos marinhos.
+                        </p2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="d-grid">
+                <img class="figure-img img-fluid rounded" src="~/recursos/Oceanos/endangered-species/kempridleyseaturtle10.jpg" alt="Tartaruga de kemp" style="width:400px;height:200px;">
+                <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#tartarugakemp" aria-expanded="false" aria-controls="tartarugakemp" style="margin-bottom:8px">
+                    Tartaruga de Kemp
+                </button>
+                <div class="collapse" id="tartarugakemp">
+                    <div class="card card-body" style="background:black;">
+                        <p2>
+                            A tartaruga marinha Kemp’s Ridley é a mais pequena e a mais rara tartaruga marinha do mundo e também uma das mais ameaçadas de extinção. Geralmente pesam apenas 50 quilos, o que é minúsculo em comparação com uma tartaruga-de-couro (outra espécie ameaçada de extinção de tartaruga marinha), que pesa mais de 700 quilos.
+
+                            Na década de 1940, existiam 120.000 ninhos de tartarugas marinhas Ridley de Kemp por temporada, mas caiu para apenas 700 ninhos por temporada em meados da década de 1980, devido à caça furtiva desenfreada para os seus ovos. Os ovos são considerados uma iguaria e as pessoas carregavam nos seus caminhões de volta para o México e os EUA.
+
+                            Hoje, as principais ameaças às tartarugas marinhas são as mudanças climáticas, lixo nos oceanos, derramamentos de óleo e poluição e emaranhamento em equipamentos de pesca.
+                        </p2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="d-grid">
+                <img class="figure-img img-fluid rounded" src="~/recursos/Oceanos/endangered-species/peixelua.jpg" alt="Peixe Lua" style="width:400px;height:200px;">
+                <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#peixelua" aria-expanded="false" aria-controls="peixelua" style="margin-bottom:8px">
+                    Peixe Lua
+                </button>
+                <div class="collapse" id="peixelua">
+                    <div class="card card-body" style="background:black;">
+                        <p2>
+                            Chega a atingir 3 metros e cerca de 2,300 kg, o peixe lua distingue-se pela forma circular do corpo, pouco habitual nos peixes que são em geral fusiformes, esta espécie não tem barbatanas caudais e a locomoção é feita pelo movimento conjugado das barbatanas dorsal e anal.
+
+                            O peixe-lua habita as zonas temperadas e quentes dos Oceanos Atlântico e Pacífico.
+
+                            Alimenta-se de zooplancton e pequenos peixes.
+
+                            As fêmeas produzem até 300 milhões de ovos de cada vez que são libertados na água.
+                        </p2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="d-grid">
+                <img class="figure-img img-fluid rounded" src="~/recursos/Oceanos/endangered-species/tubaraobranco.jpg" alt="Tubarao Branco" style="width:400px;height:200px;">
+                <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#tubaraobranco" aria-expanded="false" aria-controls="tubaraobranco" style="margin-bottom:8px">
+                    Tubarão Branco
+                </button>
+                <div class="collapse" id="tubaraobranco">
+                    <div class="card card-body" style="background:black;">
+                        <p2>
+                            Considerado o maior peixe predador, em termos de tamanho, o tubarão-branco pode chegar a 7,51 metros e pesar cerca de 2,5 toneladas.
+
+                            Ele é encontrado em todos os oceanos e é protegido em vários países.
+
+                            O maior risco a esses animais é a pesca desportiva.
+                        </p2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (AnimaisExtincaoOceano o in Model)
+            {
+                if (o.Aprovacao == true)
+                {
+                <div class="col-md-3">
+                    <div class="d-grid">
+                        <img class="figure-img img-fluid rounded" src="~/@o.URLFicheiro" style="width:400px;height:200px;">
+                        <button class="btn btn-info btn-outline-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="@String.Concat("#e", String.GetHashCode(o.Nome).ToString())" aria-expanded="false" aria-controls="@String.Concat("e", String.GetHashCode(o.Nome).ToString())" style="margin-bottom:8px">
+                            @o.Nome
+                        </button>
+                        <div class="collapse" id="@String.Concat("e", String.GetHashCode(o.Nome).ToString())">
+                            <div class="card card-body" style="background:black;">
+                                <p2>
+                                    @o.Descricao
+                                </p2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+
+            }
+        </div>
+        <div class="margem"></div>
+        <div class="text-center">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a class="btn btn-info btn-outline-dark text-white" asp-action="NovoAnimalOceano"><span class="glyphicon"></span> Adicionar Espécie </a>
+            }
+            else
+            {
+                <h4> Não pode adicionar um animal sem estar autenticado!</h4>
+            }
+        </div>
+        <div class="margem"></div>
+    </div>
+</div>
+
+<!--Quotes----------------------------------------------------------------------->
+<div class="container">
+    <div class="row">
+        <blockquote class="quote-card">
+            <p>
+                Life in the oceans must be sheer hell. A vast, merciless hell of permanent and immediate danger. So much of a hell that during evolution some species - including man - crawled, fled onto some small continents of solid land, where the Lessons of Darkness continue.
+            </p>
+            <cite>
+                Werner Herzog
+            </cite>
+        </blockquote>
+    </div>
+</div>
+
+<!--Para read more-->
+<script>
+    function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Ver mais";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Ver menos";
+            moreText.style.display = "inline";
+        }
+    }
+</script>

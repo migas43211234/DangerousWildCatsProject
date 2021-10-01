@@ -1,0 +1,179 @@
+﻿@{
+
+    Layout = "MyLayout";
+    ViewData["Title"] = "Lista de Animais em Extincao nos Oceanos";
+
+}
+
+@model List<AnimaisExtincaoOceano>
+
+<div class="m-100"></div>
+
+<div class="container">
+    <div class="row">
+        <h1>Lista de Animais em Extinção nos Oceanos</h1>
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+@if (Model.Count == 0)
+{
+    <h2>Sem Novos Animais em Extinção nos Oceanos!</h2>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Animal</th>
+                        <th>Estado</th>
+                        <th>Confirmar|Apagar</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (AnimaisExtincaoOceano a in Model)
+                    {
+                        if (@a.Aprovacao == false)
+                        {
+                            <tr>
+                                <td> @a.Nome</td>
+                                <td>Por Aprovar</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="@String.Concat("#e", String.GetHashCode(a.Nome + a.ID).ToString())" aria-expanded="false" data-bs-dismiss="modal" aria-label="Close" aria-controls="@String.Concat("e", String.GetHashCode(a.Nome + a.ID).ToString())">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                                        </svg>
+                                    </button>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="@String.Concat("#z", String.GetHashCode(a.Nome + a.ID).ToString())" aria-expanded="false" data-bs-dismiss="modal" aria-label="Close" aria-controls="@String.Concat("z", String.GetHashCode(a.Nome + a.ID).ToString())">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td> @a.Nome</td>
+                                <td>Aprovado</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="@String.Concat("#e", String.GetHashCode(a.Nome + a.ID).ToString())" aria-expanded="false" data-bs-dismiss="modal" aria-label="Close" aria-controls="@String.Concat("e", String.GetHashCode(a.Nome + a.ID).ToString())">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                                        </svg>
+                                    </button>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="@String.Concat("#z", String.GetHashCode(a.Nome + a.ID).ToString())" aria-expanded="false" data-bs-dismiss="modal" aria-label="Close" aria-controls="@String.Concat("z", String.GetHashCode(a.Nome + a.ID).ToString())">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--Modal Aprovar-->
+    @foreach (AnimaisExtincaoOceano a in Model)
+    {
+        <div class="modal fade" id="@String.Concat("e", String.GetHashCode(a.Nome + a.ID).ToString())" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><strong>Aprovar:</strong> @a.Nome</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form asp-action="EditAnimalOceano" method="post">
+
+                            <input type="hidden" name="ID" value="@a.ID" />
+                            <input type="hidden" name="Nome" value="@a.Nome" />
+                            <div class="form-group">
+                                <p><label asp-for="@a.Nome"><strong>Nome do Animal:</strong> @a.Nome</label></p>
+                            </div>
+                            <div class="form-group">
+                                <p><label asp-for="@a.Descricao"><strong>Descrição:</strong> @a.Descricao</label></p>
+                            </div>
+                            <div class="form-group">
+                                <p><label asp-for="@a.Figura"><strong>Figura:</strong> @a.Figura</label></p>
+                                <img src="~/@a.URLFicheiro" class="imgmodal" />
+
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@a.Aprovacao"><strong>Aprovação:</strong></label>
+                                @if (a.Aprovacao)
+                                {
+                                    <input name="Aprovacao" type="checkbox" checked value="Aprovado" />
+
+                                }
+                                else
+                                {
+                                    <input name="Aprovacao" type="checkbox" value="Aprovado" />
+                                }
+                            </div>
+
+                            <div>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-secondary" value="Atualizar">Actualizar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+
+<!--Modal Apagar-->
+@foreach (AnimaisExtincaoOceano a in Model)
+{
+    <div class="modal fade" id="@String.Concat("z", String.GetHashCode(a.Nome + a.ID).ToString())" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tem a certeza que quer apagar <b>@a.Nome</b>?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form asp-action="DeleteAnimalOceano" method="post">
+                        <div asp-validation-summary="All"></div>
+                        <input type="hidden" name="ID" value="@a.ID" />
+                        <div class="form-group">
+                            <p><label asp-for="@a.Nome"><strong>Nome do Animal:</strong> @a.Nome</label></p>
+                        </div>
+                        <div class="form-group">
+                            <p><label asp-for="@a.Descricao"><strong>Descrição:</strong> @a.Descricao</label></p>
+                        </div>
+                        <div class="form-group">
+                            <p><label asp-for="@a.Figura"><strong>Figura:</strong> @a.Figura</label></p>
+                            <img src="~/@a.URLFicheiro" class="imgmodal" />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-secondary">Apagar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+    }

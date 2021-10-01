@@ -1,0 +1,147 @@
+﻿@{
+    Layout = "MyLayout";
+    ViewData["Title"] = "Lista de Voluntários";
+}
+
+@model List<Voluntariado>
+
+<div class="m-100"></div>
+
+<div class="container">
+    <div class="row">
+        <h1>Lista de Voluntários</h1>
+    </div>
+</div>
+
+<div class="margem3"></div>
+
+@if (Model.Count == 0)
+{
+    <h2>Sem Voluntários!</h2>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered">
+                <tr class="table-info"><th>ID</th><th>Nome</th><th>Localidade</th><th>Mais Informações</th><th>Editar|Apagar</th></tr>
+
+                @foreach (Voluntariado v in Model)
+                {
+                    <tr>
+                        <td>@v.ID</td>
+                        <td>@v.Nome</td>
+                        <td>@v.Localidade</td>
+                        <td>
+                            <button class="btn-info" type="button" data-bs-toggle="modal" data-bs-target="@String.Concat("#d", String.GetHashCode(v.Nome+v.ID).ToString())" aria-expanded="false" aria-controls="@String.Concat("d", String.GetHashCode(v.Nome+v.ID).ToString())" style="margin-top:5px;">
+                                +
+                            </button>
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "EditVoluntarios", new { id = v.ID }, new { @class = "btn btn-primary" })
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="@String.Concat("#f", String.GetHashCode(v.Nome+v.ID).ToString())" aria-expanded="false" data-bs-dismiss="modal" aria-label="Close" aria-controls="@String.Concat("f", String.GetHashCode(v.Nome+v.ID).ToString())">
+                                Apagar
+                            </button>
+
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+    <!--Modal Detalhes-->
+    @foreach (Voluntariado v in Model)
+    {
+        <div class="modal fade" id="@String.Concat("d", String.GetHashCode(v.Nome+v.ID).ToString())" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">@v.Nome</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Data de Nascimento:</strong> @v.DataNascimento</p>
+                        <p><strong>NIF:</strong> @v.NIF</p>
+                        <p><strong>Disponibilidade Horária:</strong> @v.Disponibilidade</p>
+                        <p><strong>Número de Telemóvel:</strong> @v.NumTelemovel</p>
+                        <p><strong>Email:</strong> @v.Email</p>
+                        <p><strong>Morada:</strong> @v.Morada</p>
+                        <p><strong>Localidade:</strong> @v.Localidade</p>
+                        <p><strong>Código Postal:</strong> @v.CodigoPostal</p>
+                        <p><strong>Sobre Mim:</strong> @v.SobreMim</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <!--Modal Apagar-->
+    @foreach (Voluntariado v in Model)
+    {
+        <div class="modal fade" id="@String.Concat("f", String.GetHashCode(v.Nome+v.ID).ToString())" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Tem a certeza que quer apagar <b>@v.Nome</b>?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form asp-action="DeleteVoluntarios" method="post">
+                            <input type="hidden" name="ID" value="@v.ID" />
+                            <div class="form-group">
+                                <p><label asp-for="@v.DataNascimento"><strong>Data de Nascimento:</strong> @v.DataNascimento</label></p>
+                            </div>
+                            <div class="form-group">
+                                <p><label asp-for="@v.NIF"><strong>NIF:</strong> @v.NIF</label></p>
+                            </div>
+                            <div class="form-group">
+                                <p><label asp-for="@v.Disponibilidade"><strong>Disponibilidade Horária:</strong> @v.Disponibilidade</label></p>
+                            </div>
+                            <div class="form-group">
+                                <p><label asp-for="@v.NumTelemovel"><strong>Número de Telemóvel</strong> @v.NumTelemovel</label></p>
+                            </div>
+                            <div class="form-group">
+                                <p><label asp-for="@v.Email"><strong>Email:</strong> @v.Email</label></p>
+                            </div>
+                            <div class="form-group">
+                                <p><label asp-for="@v.Morada"><strong>Morada:</strong> @v.Morada</label></p>
+                            </div>
+                            <div class="form-group">
+                                <p><label asp-for="@v.Localidade"><strong>Localidade:</strong> @v.Localidade</label></p>
+                            </div>
+                            <div class="form-group">
+                                <p><label asp-for="@v.CodigoPostal"><strong>Código Postal:</strong> @v.CodigoPostal</label></p>
+                            </div>
+                            <div class="form-group">
+                                <p><label asp-for="@v.SobreMim"><strong>Sobre Mim:</strong> @v.SobreMim</label></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-secondary">Apagar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <div class="margem3"></div>
+
+    <div class="text-center">
+        <a class="btn btn-primary" asp-action="DeleteAllVoluntarios">Apagar Todos</a>
+    </div>
+
+}
+
+
+
+
+

@@ -1,0 +1,497 @@
+﻿@{
+
+    Layout = "MyLayout";
+    ViewData["Title"] = "Água Preservação";
+
+}
+
+@using Microsoft.AspNetCore.Identity
+@using dangerouswildcats.Areas.Identity.Data
+@inject SignInManager<dangerouswildcatsUser> SignInManager
+@inject UserManager<dangerouswildcatsUser> UserManager
+
+@model List<MedidasAguaPreservacao>
+
+<!--Imagem de Topo-->
+<div class="jumbotron">
+    <img src="~/recursos/Agua/Preservacao/1.jpg" class="img-fluid" id="imgAguasPreservacao">
+</div>
+
+<!--Titulo e texto de topo da página da água - sua preservação-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Água - Sua Preservação</h1>
+            <p>
+                A água está relacionada com o surgimento de vida no planeta Terra.
+                A importância da água na Terra é de tal ordem enorme, que a sobrevivência de animais e vegetais, bem como de todos os humanos, dependem muito dela e da sua qualidade.
+                A água está presente em inúmeras atividades dos seres humanos.
+                É um facto! Só damos a devida importância à água quando sentimos a falta dela, mas isso precisa mudar.
+                Preservar os recursos hidricos é preservar a nossa existência. A maior parte das células do nosso corpo possui água e, sendo assim, este recurso vital é demasiado importante para nós.
+            </p>
+            <p>
+                A relevância da água pode ser demonstrada por:
+            </p>
+            <div class="margem">
+                <ul>
+                    <li>Permitir a sobrevivência dos seres vivos;</li>
+                    <li>Equilibrar e conservar a biodiversidade;</li>
+                    <li>Regular o clima do planeta.</li>
+                </ul>
+            </div>
+            <p>
+                Para inverter esta situação de crise da água, as autoridades governamentais devem procurar fazer politicas de gestão da água eficazes,
+                de modo a combater o excessivo consumo e desperdicio de água, e promovendo o uso racional deste recurso vital à vida nas diversas atividades,
+                como os sistemas de tratamento urbano e industriais, bem como adoptar boas práticas agricolas, de forma a prevenir a contaminação de águas subterrâneas
+                e superficiais.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+<!--ARTIGOS----------------------------------------------------------------------->
+<div class="container-fluid article-background">
+    <div class="row">
+        <h1>Artigos</h1>
+        <div class="col-lg-3">
+            <a href="https://www.healthline.com/nutrition/mineral-water-benefits">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Agua/Preservacao/front-image-drinking-water.jpg" alt="Artigo 1" style="width:100%">
+                    <h5>Beneficios da Água Mineral</h5>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-3">
+            <a href="https://www.thebalancesmb.com/conservation-efforts-why-should-we-save-water-3157877">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Agua/Preservacao/unnamed2.jpg" alt="Artigo 2" style="width:100%">
+                    <h5>Benefícios Conservação da Água</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://www.researchgate.net/publication/312525328_WATER_CONSERVATION_STRATEGIES_AND_SOLUTIONS">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Agua/Preservacao/eed5df0c8d3ff347d54a25da55053c54.jpg" alt="Artigo 3" style="width:100%">
+                    <h5>Medidas a Adoptar</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3">
+            <a href="https://www.parkwayeast.com.sg/healthplus/article/the-importance-of-drinking-water">
+                <div class="card">
+                    <img class="article-image" src="~/recursos/Agua/Preservacao/drops-of-water-578897_960_720-630x390.jpg" alt="Artigo 4" style="width:100%">
+                    <h5>Importância da Água</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--Quotes----------------------------------------------------------------------->
+<div class="container">
+    <div class="row">
+        <blockquote class="quote-card">
+            <p>
+                Água pura é o primeiro e mais importante remédio do mundo
+            </p>
+            <cite>
+                Provérbio Eslovaco
+            </cite>
+        </blockquote>
+    </div>
+</div>
+
+<div class="m-30"></div>
+
+<!--Dia Mundial da Água----------------------------------------------------------------------->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12"></div>
+        <h3 class="titulo">Dia Mundial da Água</h3>
+        <div class="row">
+            <div class="col-md-9">
+                <fieldset>
+                    <div class="margem">
+                        <p>
+                            A água por ser um bem natural de uso colectivo, necessita ser preservada.
+                            No dia 22 de Março, em todos os países do mundo é celebrado o Dia Mundial da Água, uma data instituída no ano de 1992 pela ONU para celebrar a importância deste recurso valioso, bem como discutir e alertar para o seu uso racional.
+                            Neste dia há uma consciencialização global sobre a importância da água, de modo a serem discutidas e tomadas medidas para a sua preservação. Através da água percebemos os efeitos das alterações climáticas, desde eventos climáticos extremos, como secas e inundações, até ao desaparecimento de icebergs, o avanço da água salgada e o aumento do nível do mar.
+                            Os recursos hídricos dão um grande contributo para o desenvolvimento económico, para a sustentabilidade ambiental e para a atenuação da pobreza e, sendo assim, precisamos de aumentar urgentemente os investimentos em bacias hidrográficas e nas infraestruturas de água saudável.
+                            Desde a segurança alimentar e energética até à saúde humana e ambiental, a água contribui para um melhor bem-estar social, quando bem utilizada.
+                        </p>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="col-md-3">
+                <div class="margem">
+                    <img src="~/recursos/Agua/Preservacao/2f926ed917326a132a128451189adafc.jpg" style="width:300px; height: 215px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-30"></div>
+    <!--Soluções baseadas na Natureza (SbN) para a Gestão da Água----------------------------------------------------------------------->
+    <div class="row">
+        <div class="col-md-12"></div>
+        <h3 class="titulo">Soluções baseadas na Natureza (SbN) para a Gestão da Água</h3>
+        <div class="row">
+            <div class="col-md-9">
+                <fieldset>
+                    <div class="margem">
+                        <p>
+                            Segundo a ONU, no <a href="https://unesdoc.unesco.org/ark:/48223/pf0000261594_por">relatório</a> mundial sobre o Desenvolvimento dos Recursos Hidricos em 2018, as soluções baseadas na natureza (SbN) são inspiradas e apoiadas pela natureza e usam, ou simulam, processos naturais a fim de contribuir para o aperfeiçoamento da gestão da água, ou seja aumentar a sua disponibilidade e melhorar a sua qualidade.
+                            As SbN podem envolver a conservação ou a reabilitação de ecossistemas naturais e/ou o desenvolvimento ou a criação de processos naturais em ecossistemas modificados ou artificiais.
+                            Este tipo de soluções tem crescido significativamente nos últimos anos em uma ampla gama de politicas que produziram avanços em vários sectores, incluindo de recursos hídricos, segurança alimentar e agricultura, biodiversidade, meio ambiente e alterações climáticas.
+                            Aumentar o uso das SbN será um ponto central na realização da Agenda 2030 para o Desenvolvimento Sustentável.
+                            Estas soluções trabalham com a natureza, não contra ela e, por isso, oferecem meios essenciais para ir além das abordagens tradicionais para aumentar os ganhos em eficiência social, económica e hidrológica, no que diz respeito à gestão da água.
+                            As SbN são especialmente promissoras na obtenção de progressos em direção à produção alimentar sustentável, à melhoria dos assentamentos humanos, ao acesso ao fornecimento de água potável e aos serviços de saneamento, e à redução de riscos de desastres relacionados à água.
+                        </p>
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="margem">
+                    <img src="~/recursos/Agua/Preservacao/images.jpg" style="width:300px; height: 280px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Mais Quotes----------------------------------------------------------------------->
+<div class="container alert-info">
+
+    <div class="m-30">
+        <h2><b>Ajuda a proteger a água. Sem água não há vida!</b></h2>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="zoom">
+                <p>"Milhares viveram sem amor, ninguém viveu sem água." - <i>W.H.Auden</i></p>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="zoom">
+                <p>"A água é a força motriz de toda a natureza." - <i>Leonardo Da Vinci</i></p>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="zoom">
+                <p>"Pensa, tu não podes fazer nada sem água."</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Medidas a adoptar para conservação da água potável-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12"></div>
+        <div class="margem">
+            <h1>O que podemos fazer</h1>
+            <!--<legend><h3 class="titulo">Medidas a adoptar para conservação da água potável</h3></legend>-->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 offset-1">
+            <fieldset>
+                <div class="margem2">
+                    <p style="font-size:18px"><b>Não deixe água a correr se não estiver a utilizá-la</b></p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#saibamais" aria-expanded="false" aria-controls="saibamais" style="margin-top:5px;">
+                        <div class="text-center">Saiba mais</div>
+                    </button>
+                    <div class="collapsing" id="saibamais">
+                        <div class="text-justify" style="margin-top:10px;">
+                        </div>
+                        <div class="margem">
+                            <p>Lavar os dentes, tomar banhos inteiros, lavar a louça ou fazer a barba com a água sempre a correr é um grande desperdicio.</p>
+                        </div>
+                        <img src="~/recursos/Agua/Preservacao/desperdício-de-água-restaurantes-2-1280x640.jpg" style="width:520px; height: 260px;">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="col-md-5 offset-1">
+            <fieldset>
+                <div class="margem2">
+                    <p style="font-size:18px"><b>Fechar bem a torneira para evitar que pingue</b></p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#saibamais2" aria-expanded="false" aria-controls="saibamais2" style="margin-top:5px;">
+                        <div class="text-center">Saiba mais</div>
+                    </button>
+                    <div class="collapsing" id="saibamais2">
+                        <div class="text-justify" style="margin-top:10px;">
+                        </div>
+                        <div class="margem">
+                            <p>Uma torneira a pingar consome mais água do que julga.</p>
+                        </div>
+                        <div class="margem3">
+                            <img src="~/recursos/Agua/Preservacao/índice.jpg" style="width:520px; height: 260px;">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <!-------Fim da Primeira Row-------------------->
+
+    <div class="row">
+        <div class="col-md-5 offset-1">
+            <fieldset>
+                <p style="font-size:18px"><b>Pense nas máquinas de lavar louça e roupa</b></p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#saibamais3" aria-expanded="false" aria-controls="saibamais3" style="margin-top:5px;">
+                    <div class="text-center">Saiba mais</div>
+                </button>
+                <div class="collapsing" id="saibamais3">
+                    <div class="text-justify" style="margin-top:10px;">
+                    </div>
+                    <div class="margem">
+                        <p>Para poupar água evite fazer meia carga. Não ponha a máquina de lavar louça a funcionar sem ter a certeza de que está mesmo cheia, espere até juntar uma quantidade considerável de louça. Quanto à máquina de lavar roupa espere até ter carga suficiente para encher o tambor.</p>
+                    </div>
+                    <div class="margem">
+                        <img src="~/recursos/Agua/Preservacao/21197411_RBJuH.jpg" style="width:520px; height: 260px;">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="col-md-5 offset-1">
+            <fieldset>
+                <p style="font-size:18px"><b>Instale redutores nas torneiras</b></p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#saibamais4" aria-expanded="false" aria-controls="saibamais4" style="margin-top:5px;">
+                    <div class="text-center">Saiba mais</div>
+                </button>
+                <div class="collapsing" id="saibamais4">
+                    <div class="text-justify" style="margin-top:10px;">
+                    </div>
+                    <div class="margem">
+                        <p>Instalar redutores de caudal nas torneiras mais utilizadas é uma forma de gastar menos água, mesmo com a torneira aberta ao máximo.</p>
+                    </div>
+                    <div class="margem4">
+                        <img src="~/recursos/Agua/Preservacao/ng1351713.jpg" style="width:520px; height: 260px;">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <!-------Fim da Segunda Row-------------------->
+
+
+
+    <div class="row">
+        <div class="col-md-5 offset-1">
+            <fieldset>
+                <div class="margem">
+                    <p style="font-size:18px"><b>Reaproveite a água sempre que possível</b></p>
+                </div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#saibamais5" aria-expanded="false" aria-controls="saibamais5" style="margin-top:5px;">
+                    <div class="text-center">Saiba mais</div>
+                </button>
+                <div class="collapsing" id="saibamais5">
+                    <div class="text-justify" style="margin-top:10px;">
+                    </div>
+                    <div class="margem">
+                        <p>Quando lavar legumes ou fruta, faça-o numa bacia em vez de o fazer com a água a correr. A seguir, pode aproveitar a água da bacia para regar as plantas, ou para outro fim.</p>
+                    </div>
+                    <div class="margem3">
+                        <img src="~/recursos/Agua/Preservacao/baldeCC.jpg" style="width:520px; height: 260px;">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+
+        <div class="col-md-5 offset-1">
+            <fieldset>
+                <div class="margem">
+                    <p style="font-size:18px"><b>Cozinhe com a quantidade certa de água</b></p>
+                </div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#saibamais6" aria-expanded="false" aria-controls="saibamais6" style="margin-top:5px;">
+                    <div class="text-center">Saiba mais</div>
+                </button>
+                <div class="collapsing" id="saibamais6">
+                    <div class="text-justify" style="margin-top:10px;">
+                    </div>
+                    <div class="margem">
+                        <p>Por vezes podemos usar mais água para cozinhar do que realmente necessitamos. Ao cozer encha a panela até que os alimentos estejam cobertos. Menos água também significa menos tempo de cozedura e poupança de energia.</p>
+                    </div>
+                    <div class="margem">
+                        <img src="~/recursos/Agua/Preservacao/agua-cozimento-13.jpg" style="width:520px; height: 260px;">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <!-------Fim da Terceira Row-------------------->
+
+    <div class="margem"></div>
+
+    <div class="row">
+        <div class="col-md-5 offset-1">
+            <fieldset>
+                <p style="font-size:18px"><b>Atenção à rega</b></p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#saibamais7" aria-expanded="false" aria-controls="saibamais7" style="margin-top:5px;">
+                    <div class="text-center">Saiba mais</div>
+                </button>
+                <div class="collapsing" id="saibamais7">
+                    <div class="text-justify" style="margin-top:10px;">
+                    </div>
+                    <div class="margem">
+                        <p>Ao regar as plantas, aproveite toda a água possível. Por exemplo, através do aproveitamento da água da chuva em recipientes próprios, como tanques de rega. Se não pode estar dependente da chuva, pense em investir num sistema de rega gota a gota.</p>
+                    </div>
+                    <div class="margem">
+                        <img src="~/recursos/Agua/Preservacao/pexels-sarah-dietz-4501244.jpg" style="width:520px; height: 260px;">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="col-md-5 offset-1">
+            <fieldset>
+                <p style="font-size:18px"><b>Use balde para lavar o carro</b></p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#saibamais8" aria-expanded="false" aria-controls="saibamais8" style="margin-top:5px;">
+                    <div class="text-center">Saiba mais</div>
+                </button>
+                <div class="collapsing" id="saibamais8">
+                    <div class="text-justify" style="margin-top:10px;">
+                    </div>
+                    <div class="margem">
+                        <p>A mangueira gera um desperdicio maior de água. Usando um balde você evita que a água fique correndo enquanto ensaboa o carro, reduzindo o consumo.</p>
+                    </div>
+                    <div class="margem3">
+                        <img src="~/recursos/Agua/Preservacao/lavar-jantes-do-carro.jpg" style="width:520px; height: 260px;">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <!-------Fim da Quarta Row-------------------->
+
+    <div class="margem"></div>
+
+    <div class="row">
+        <div class="col-md-5 offset-1">
+            <fieldset>
+                <p style="font-size:18px"><b>Reutilize a água da chuva</b></p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#saibamais9" aria-expanded="false" aria-controls="saibamais9" style="margin-top:5px;">
+                    <div class="text-center">Saiba mais</div>
+                </button>
+                <div class="collapsing" id="saibamais9">
+                    <div class="text-justify" style="margin-top:10px;">
+                    </div>
+                    <div class="margem">
+                        <p>Investir em cisternas para a captação e armazenamento de água da chuva é uma boa ideia, outra ideia é instalar recursos de reaproveitamento de água dentro de casa, como um sistema para reutilizar a água do banho na descarga. Há muitas formas de reutilizar a água em casa que ajudam na preservação do meio ambiente.</p>
+                    </div>
+                    <div class="margem">
+                        <img src="~/recursos/Agua/Preservacao/50-650-mini-cisterna-captaco-de-agua-da-chuva-detalhes.jpg" style="width:520px; height: 260px;">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+
+
+        <div class="col-md-5 offset-1">
+            <fieldset>
+                <p style="font-size:18px"><b>Ajuste o autoclismo</b></p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#saibamais10" aria-expanded="false" aria-controls="saibamais10" style="margin-top:5px;">
+                    <div class="text-center">Saiba mais</div>
+                </button>
+                <div class="collapsing" id="saibamais10">
+                    <div class="text-justify" style="margin-top:10px;">
+                    </div>
+                    <div class="margem">
+                        <p>Muitas vezes, não é necessário fazer a descarga completa do autoclismo e muitos aparelhos permitem a opção de meia descarga.</p>
+                    </div>
+                    <div class="margem5">
+                        <img src="~/recursos/Agua/Preservacao/APT_7158-min.jpg" style="width:520px; height: 260px;">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <!-------Fim da Quinta Row-------------------->
+
+    <div class="margem"></div>
+
+    <div class="row">
+        @foreach (MedidasAguaPreservacao m in Model)
+        {
+            if (m.Aprovacao == true)
+            {
+                <div class="col-md-5 offset-1">
+                    <fieldset>
+                        <p style="font-size:18px"><b>@m.NomeMedida</b></p>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="@String.Concat("#a", String.GetHashCode(m.NomeMedida).ToString())" aria-expanded="false" aria-controls="@String.Concat("a", String.GetHashCode(m.NomeMedida).ToString())" style="margin-top:5px;">
+                            <div class="text-center">Saiba mais</div>
+                        </button>
+                        <div class="collapsing" id="@String.Concat("a", String.GetHashCode(m.NomeMedida).ToString())">
+                            <div class="text-justify" style="margin-top:10px;">
+                            </div>
+                            <div class="margem">
+                                <p>@m.Descricao</p>
+                            </div>
+                            <div class="margem">
+                                <img src="~/@m.URLFicheiro" style="width:520px; height: 260px;">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            }
+        }
+
+    </div>
+
+
+    <div class="m-25"></div>
+
+    <div class="text-center">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <a class="btn btn-primary" asp-controller="Conteudos" asp-action="NovaMedida"><span class="glyphicon"></span> Nova Medida </a>
+        }
+        else
+        {
+            <h4> Não pode adicionar uma nova medida sem estar autenticado!</h4>
+        }
+
+    </div>
+
+    <div class="margem4"></div>
+
+    <!--Videos-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="margem">
+                    <span>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/GOLf2RbxmzE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="margem">
+                    <span>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LgTJ9GBtn-8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

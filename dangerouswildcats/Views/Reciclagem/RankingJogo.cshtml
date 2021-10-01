@@ -1,0 +1,61 @@
+﻿@{
+
+    Layout = "MyLayout";
+    ViewData["Title"] = "Ranking do Jogo";
+
+}
+
+@model List<JogoReciclagem>
+
+<div class="margem5"></div>
+
+<div class="container-fluid">
+
+    <div class="justify-content-center text-center text-dark imageranking row">
+
+        <div class="ranking col-4" style=" margin-top: 650px;">
+
+            @if (Model.Count == 0)
+            {
+                <h2> Não existe nenhum jogador! </h2>
+            }
+            else
+            {
+
+                <h1> Ranking do jogo</h1>
+
+                <table class="ranking table text-white">
+                    <thead>
+                        <tr>
+                            <th scope="col">Posição</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Nivel</th>
+                            <th scope="col">Material Reciclado</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (JogoReciclagem jr in Model)
+                        {
+
+                            <tr class="text-white">
+                                <th>@(Model.IndexOf(jr) + 1) º</th>
+                                <th>@jr.UsernameJogador</th>
+                                <th>@jr.Nivel</th>
+                                <th>@jr.TotalMaterialReciclado</th>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+
+            }
+
+        </div>
+
+    </div>
+
+    <div class="margem5"></div>
+
+</div>
